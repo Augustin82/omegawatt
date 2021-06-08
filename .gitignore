@@ -1,2 +1,3 @@
 environment/development/grafana
 environment/development/influxdb
+node_modules

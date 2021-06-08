@@ -1,0 +1,10 @@
+{
+  "name": "omegawatt",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Augustin Ragon",
+  "license": "MIT",
+  "scripts": {
+    "compose": "docker-compose -f ./environment/development/docker-compose.yml up"
+  }
+}

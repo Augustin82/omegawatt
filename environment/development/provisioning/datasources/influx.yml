@@ -6,9 +6,9 @@ datasources:
     access: proxy
     url: http://localhost:8086
     secureJsonData:
-      token: token
+      token: 0m3g4w4tT
     jsonData:
       version: Flux
-      organization: organization
-      defaultBucket: bucket
+      organization: omegawatt
+      defaultBucket: defaultBucket
       tlsSkipVerify: true
