@@ -1,0 +1,17 @@
+apiVersion: 1
+
+datasources:
+  - name: InfluxDB_v2_Flux
+    isDefault: true
+    type: influxdb
+    access: proxy
+    url: http://influxdb:8086
+    allowUiUpdates:
+      false
+    secureJsonData:
+      token: 0m3g4w4tT
+    jsonData:
+      version: Flux
+      organization: omegawatt
+      defaultBucket: defaultBucket
+      tlsSkipVerify: true
