@@ -16,6 +16,10 @@ const {
 
 const client = new InfluxDB({ url: INFLUXDB_URL, token: INFLUXDB_ADMIN_TOKEN });
 
+logger.info(
+  `INFLUXDB_URL: ${INFLUXDB_URL}, INFLUXDB_ADMIN_TOKEN:${INFLUXDB_ADMIN_TOKEN}`
+);
+
 const { Point } = require("@influxdata/influxdb-client");
 
 const start = async () => {
