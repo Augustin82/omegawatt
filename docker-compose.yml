@@ -1,5 +1,5 @@
 # copied from https://domopi.eu/tig-le-trio-telegraf-influxdb-grafana-pour-surveiller-vos-equipements/
-version: "3.8"
+version: "3.3"
 services:
   influxdb:
     image: influxdb
