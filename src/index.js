@@ -34,14 +34,14 @@ const start = async (customer) => {
           logger.info(`end processing file ${csvFile}`);
           fs.renameSync(
             csvFile,
-            path.join(dirPath, projectName, "done", path.basename(csvFile))
+            path.join(dirPath, projectName, "_done", path.basename(csvFile))
           );
         })
         .catch((err) => {
           logger.error(err);
           fs.renameSync(
             csvFile,
-            path.join(dirPath, projectName, "error", path.basename(csvFile))
+            path.join(dirPath, projectName, "_error", path.basename(csvFile))
           );
         });
     }
