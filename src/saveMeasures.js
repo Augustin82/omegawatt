@@ -38,6 +38,11 @@ async function saveMeasures(customer, projectName, measures) {
     }
   }
 
+  if (points.length > 0) {
+    writeApi.writePoints(points);
+    await writeApi.flush();
+  }
+
   await writeApi
     .close()
     .then(() => {
