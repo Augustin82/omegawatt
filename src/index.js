@@ -29,21 +29,20 @@ const start = async (customer) => {
     for (let csvFile of csvFiles) {
       logger.info(`start processing file ${csvFile}`);
       const measures = await buildMeasures(csvFile);
-      saveMeasures(customer, projectName, measures)
-        .then(() => {
-          logger.info(`end processing file ${csvFile}`);
-          fs.renameSync(
-            csvFile,
-            path.join(dirPath, projectName, "_done", path.basename(csvFile))
-          );
-        })
-        .catch((err) => {
-          logger.error(err);
-          fs.renameSync(
-            csvFile,
-            path.join(dirPath, projectName, "_error", path.basename(csvFile))
-          );
-        });
+      try {
+        await saveMeasures(customer, projectName, measures);
+        logger.info(`end processing file ${csvFile}`);
+        fs.renameSync(
+          csvFile,
+          path.join(dirPath, projectName, "_done", path.basename(csvFile))
+        );
+      } catch (err) {
+        logger.error(err);
+        fs.renameSync(
+          csvFile,
+          path.join(dirPath, projectName, "_error", path.basename(csvFile))
+        );
+      }
     }
   }
 };
