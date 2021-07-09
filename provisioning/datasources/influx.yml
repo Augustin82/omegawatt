@@ -6,12 +6,11 @@ datasources:
     type: influxdb
     access: proxy
     url: http://influxdb:8086
-    allowUiUpdates:
-      false
+    allowUiUpdates: false
     secureJsonData:
-      token: 0m3g4w4tT
+      token: $INFLUXDB_ADMIN_TOKEN
     jsonData:
       version: Flux
-      organization: omegawatt
-      defaultBucket: defaultBucket
+      organization: $INFLUXDB_ORG
+      defaultBucket: $INFLUXDB_BUCKET
       tlsSkipVerify: true

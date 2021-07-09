@@ -30,6 +30,9 @@ services:
     links:
       - influxdb:influxdb
     environment:
+      INFLUXDB_ADMIN_TOKEN: $INFLUXDB_ADMIN_TOKEN
+      INFLUXDB_ORG: $INFLUXDB_ORG
+      INFLUXDB_BUCKET: $INFLUXDB_BUCKET
       GF_INSTALL_PLUGINS: "grafana-clock-panel,\
                           grafana-influxdb-08-datasource,\
                           grafana-kairosdb-datasource,\
