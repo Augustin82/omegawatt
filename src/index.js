@@ -1,64 +1,48 @@
 const dotenv = require("dotenv");
+const path = require("path");
 const { logger } = require("./lib");
 const { buildMeasures } = require("./buildMeasures");
-
-const { InfluxDB } = require("@influxdata/influxdb-client");
+const { saveMeasures } = require("./saveMeasures");
+const getCsvFiles = require("./lib/getCsvFiles");
+const fs = require("fs");
 
 dotenv.config();
 
-const {
-  DIR_PATH,
-  INFLUXDB_ADMIN_TOKEN,
-  INFLUXDB_ORG,
-  INFLUXDB_BUCKET,
-  INFLUXDB_URL,
-} = process.env;
+const { DIR_PATH } = process.env;
 
-const client = new InfluxDB({ url: INFLUXDB_URL, token: INFLUXDB_ADMIN_TOKEN });
-
-logger.info(
-  `INFLUXDB_URL: ${INFLUXDB_URL}, INFLUXDB_ADMIN_TOKEN:${INFLUXDB_ADMIN_TOKEN}`
-);
-
-const { Point } = require("@influxdata/influxdb-client");
-
-const start = async () => {
-  const measures = await buildMeasures(DIR_PATH);
-
-  //TODO(tglatt): influxdb org should be the ftp dirname
-  const writeApi = client.getWriteApi(INFLUXDB_ORG, INFLUXDB_BUCKET);
-
-  let points = [];
-  for (let measure of measures) {
-    for (let index = 1; index <= 6; index++) {
-      const value = measure["value" + index];
-      if (value) {
-        const point = new Point("socomec")
-          .timestamp(new Date(measure.measured_at))
-          .tag("device_name", measure["device_name"])
-          .tag("usage", measure["usage" + index])
-          .tag("nature", measure["nature" + index])
-          .tag("measured_value", measure["measured_value" + index])
-          .tag("unit", measure["unit" + index])
-          .floatField("value", value);
-        points.push(point);
-      }
-      if (points.length > 1000) {
-        writeApi.writePoints(points);
-        await writeApi.flush();
-        points = [];
-      }
-    }
+function createFileIfNotExists(dirname) {
+  if (fs.existsSync(dirname)) {
+    logger.info(`Directory ${dirname} exists!`);
+  } else {
+    fs.mkdirSync(dirname);
+    logger.info(`Directory ${dirname} created!`);
   }
+}
 
-  await writeApi
-    .close()
-    .then(() => {
-      logger.info("COMPLETE!");
-    })
-    .catch((e) => {
-      logger.error(e);
-    });
+const start = async (dirPath) => {
+  logger.info(`start processing dir ${dirPath}`);
+
+  const doneDir = path.join(dirPath, "done");
+  const errorDir = path.join(dirPath, "error");
+
+  createFileIfNotExists(path.join(dirPath, "done"));
+  createFileIfNotExists(path.join(dirPath, "error"));
+
+  const csvFiles = getCsvFiles(dirPath);
+
+  for (let csvFile of csvFiles) {
+    logger.info(`start processing file ${csvFile}`);
+    const measures = await buildMeasures(csvFile);
+    saveMeasures(measures)
+      .then(() => {
+        logger.info(`end processing file ${csvFile}`);
+        fs.renameSync(csvFile, path.join(doneDir, path.basename(csvFile)));
+      })
+      .catch((err) => {
+        logger.error(err);
+        fs.renameSync(csvFile, path.join(errorDir, path.basename(csvFile)));
+      });
+  }
 };
 
-start();
+start(DIR_PATH);
