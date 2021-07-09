@@ -1,6 +1,6 @@
 const dotenv = require("dotenv");
 const path = require("path");
-const { logger } = require("./lib");
+const { logger, getProjectDirs } = require("./lib");
 const { buildMeasures } = require("./buildMeasures");
 const { saveMeasures } = require("./saveMeasures");
 const getCsvFiles = require("./lib/getCsvFiles");
@@ -8,7 +8,49 @@ const fs = require("fs");
 
 dotenv.config();
 
-const { DIR_PATH } = process.env;
+const { CUSTOMERS } = process.env;
+const customers = JSON.parse(CUSTOMERS);
+
+const start = async (customer) => {
+  const { bucket, dirPath } = customer;
+
+  logger.info(`start processing ${bucket}`);
+
+  const projectDirs = getProjectDirs(dirPath);
+
+  for (let projectDir of projectDirs) {
+    const projectName = path.basename(projectDir);
+
+    createFileIfNotExists(path.join(dirPath, projectName, "_done"));
+    createFileIfNotExists(path.join(dirPath, projectName, "_error"));
+
+    const csvFiles = getCsvFiles(projectDir);
+
+    for (let csvFile of csvFiles) {
+      logger.info(`start processing file ${csvFile}`);
+      const measures = await buildMeasures(csvFile);
+      saveMeasures(customer, projectName, measures)
+        .then(() => {
+          logger.info(`end processing file ${csvFile}`);
+          fs.renameSync(
+            csvFile,
+            path.join(dirPath, projectName, "done", path.basename(csvFile))
+          );
+        })
+        .catch((err) => {
+          logger.error(err);
+          fs.renameSync(
+            csvFile,
+            path.join(dirPath, projectName, "error", path.basename(csvFile))
+          );
+        });
+    }
+  }
+};
+
+for (let customer of customers) {
+  start(customer);
+}
 
 function createFileIfNotExists(dirname) {
   if (fs.existsSync(dirname)) {
@@ -18,31 +60,3 @@ function createFileIfNotExists(dirname) {
     logger.info(`Directory ${dirname} created!`);
   }
 }
-
-const start = async (dirPath) => {
-  logger.info(`start processing dir ${dirPath}`);
-
-  const doneDir = path.join(dirPath, "done");
-  const errorDir = path.join(dirPath, "error");
-
-  createFileIfNotExists(path.join(dirPath, "done"));
-  createFileIfNotExists(path.join(dirPath, "error"));
-
-  const csvFiles = getCsvFiles(dirPath);
-
-  for (let csvFile of csvFiles) {
-    logger.info(`start processing file ${csvFile}`);
-    const measures = await buildMeasures(csvFile);
-    saveMeasures(measures)
-      .then(() => {
-        logger.info(`end processing file ${csvFile}`);
-        fs.renameSync(csvFile, path.join(doneDir, path.basename(csvFile)));
-      })
-      .catch((err) => {
-        logger.error(err);
-        fs.renameSync(csvFile, path.join(errorDir, path.basename(csvFile)));
-      });
-  }
-};
-
-start(DIR_PATH);

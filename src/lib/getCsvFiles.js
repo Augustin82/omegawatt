@@ -6,7 +6,7 @@ function walkSync(dir, filelist) {
   files = fs.readdirSync(dir);
   filelist = filelist || [];
   files.forEach(function (file) {
-    if (fs.statSync(dir + file).isDirectory()) {
+    if (!file.startsWith("_") && fs.statSync(dir + file).isDirectory()) {
       filelist = walkSync(dir + file + "/", filelist);
     } else {
       filelist.push(dir + file);
