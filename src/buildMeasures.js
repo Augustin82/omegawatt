@@ -3,6 +3,14 @@ const fs = require("fs");
 const { logger } = require("./lib");
 const { parseCSV } = require("./parser");
 
+/**
+ * @typedef {any} Measure
+ **/
+
+/**
+ * @type {(filepath: string) => Promise<Measure[]> }
+ * @throws {Error}
+ **/
 const buildMeasures = async (filepath) => {
   if (filepath.includes("socomec")) {
     const measures = await parseCSV(filepath);
