@@ -1,7 +1,7 @@
 const fs = require("fs");
 
 function getProjectDirs(dir) {
-  if (dir[dir.length - 1] != "/") {
+  if (dir[dir.length - 1] !== "/") {
     dir = dir.concat("/");
   }
 

@@ -1,11 +1,11 @@
 const fs = require("fs");
 
 function walkSync(dir, filelist) {
-  if (dir[dir.length - 1] != "/") {
+  if (dir[dir.length - 1] !== "/") {
     dir = dir.concat("/");
   }
 
-  files = fs.readdirSync(dir);
+  let files = fs.readdirSync(dir);
   filelist = filelist || [];
   files.forEach(function (file) {
     if (!file.startsWith("_") && fs.statSync(dir + file).isDirectory()) {

@@ -1,5 +1,3 @@
-const fs = require("fs");
-
 const { logger } = require("./lib");
 const { parseCSV } = require("./parser");
 

@@ -22,9 +22,10 @@ const parseCSV = async (filepath) => {
 
   const measures = [];
 
-  for (i = 0; i < rows.length; i++) {
+  for (let i = 0; i < rows.length; i++) {
     const row = rows[i];
     if (!row) {
+      continue;
     } else if (i === 1) {
       await parseMainHeading(row, metadatas);
     } else if (i >= 3 && i <= 8) {

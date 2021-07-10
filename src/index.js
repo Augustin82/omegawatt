@@ -49,7 +49,7 @@ const start = async (customer) => {
 };
 
 for (let customer of customers) {
-  start(customer);
+  void start(customer);
 }
 
 function createFileIfNotExists(dirname) {
