@@ -7,7 +7,7 @@ const { parseMeasuresMetadata } = require("./parseMeasuresMetadata");
 const { parseMainHeading } = require("./parseMainHeading");
 const { DEVICE_NAME, METADATA_KEY } = require("../constant");
 
-const parseCSV = async (filepath, delimiter) => {
+const parseSocomec = async (filepath, delimiter) => {
   delimiter = delimiter || guessDelimiter(filepath);
 
   const metadatas = {
@@ -44,8 +44,7 @@ const parseCSV = async (filepath, delimiter) => {
 };
 
 module.exports = {
-  parseCSV,
-  parseSocomec: parseCSV,
+  parseSocomec,
   DEVICE_NAME,
   METADATA_KEY,
 };
