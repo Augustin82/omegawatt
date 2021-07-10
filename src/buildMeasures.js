@@ -1,5 +1,6 @@
 const { logger } = require("./lib");
-const { parseCSV } = require("./parser");
+const { parseSocomec } = require("./parser/socomec");
+const { parseOmegawatt } = require("./parser/omegawatt");
 
 /**
  * @typedef {any} Measure
@@ -7,17 +8,19 @@ const { parseCSV } = require("./parser");
 
 /**
  * @type {(filepath: string) => Promise<Measure[]> }
- * @throws {Error}
  **/
 const buildMeasures = async (filepath) => {
+  let parser;
+
   if (filepath.includes("socomec")) {
-    const measures = await parseCSV(filepath);
-    logger.info(`${measures.length} measures in ${filepath}`);
-    return measures;
+    parser = parseSocomec;
   } else {
-    //TODO: omegawatt parser
+    parser = parseOmegawatt;
   }
-  throw new Error(`Parser not found for ${filepath}`);
+
+  const measures = await parser(filepath);
+  logger.info(`${measures.length} measures in ${filepath}`);
+  return measures;
 };
 
 module.exports = { buildMeasures };

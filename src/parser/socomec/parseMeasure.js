@@ -1,5 +1,5 @@
-const { MEASURE_STATES } = require("../models");
-const { DEVICE_NAME, METADATA_KEY } = require("./constant");
+const { MEASURE_STATES } = require("../../models");
+const { DEVICE_NAME, METADATA_KEY } = require("../constant");
 
 const { LOAD_NAME, USAGE, NATURE, MEASURED_VALUE, UNIT, SCALE } = METADATA_KEY;
 

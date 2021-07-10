@@ -1,11 +1,11 @@
 const fs = require("fs");
 
-const { CSVToArray } = require("../lib");
+const { CSVToArray } = require("../../lib");
 
 const { parseMeasure } = require("./parseMeasure");
 const { parseMeasuresMetadata } = require("./parseMeasuresMetadata");
 const { parseMainHeading } = require("./parseMainHeading");
-const { DEVICE_NAME, METADATA_KEY } = require("./constant");
+const { DEVICE_NAME, METADATA_KEY } = require("../constant");
 
 const parseCSV = async (filepath) => {
   const metadatas = {
@@ -43,6 +43,7 @@ const parseCSV = async (filepath) => {
 
 module.exports = {
   parseCSV,
+  parseSocomec: parseCSV,
   DEVICE_NAME,
   METADATA_KEY,
 };
