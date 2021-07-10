@@ -23,7 +23,6 @@ const parseSocomec = async (filepath, delimiter) => {
   const rows = CSVToArray(fileContent, delimiter);
 
   const measures = [];
-  return measures;
 
   for (let i = 0; i < rows.length; i++) {
     const row = rows[i];
