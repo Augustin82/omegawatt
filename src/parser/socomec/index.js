@@ -33,11 +33,10 @@ const parseSocomec = async (filepath, delimiter) => {
     } else if (i >= 3 && i <= 8) {
       await parseMeasuresMetadata(row, metadatas);
     } else if (i >= 9) {
-      //TODO: should be an array of measures
-      const measure = await parseMeasure(row, metadatas);
-      if (measure) {
+      const parsedMeasures = await parseMeasure(row, metadatas);
+      parsedMeasures.forEach((measure) => {
         measures.push(measure);
-      }
+      });
     }
   }
   return measures;
