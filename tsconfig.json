@@ -5,7 +5,7 @@
     "checkJs": true,
     "moduleResolution": "node",
     "alwaysStrict": true,
-    "strictNullChecks": false,
+    "strictNullChecks": true,
     "emitDeclarationOnly": true,
     "declaration": true,
     "outDir": "types",

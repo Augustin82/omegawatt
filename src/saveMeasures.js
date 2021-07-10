@@ -8,11 +8,11 @@ async function saveMeasures(customer, projectName, measures) {
   const { bucket } = customer;
 
   const client = new InfluxDB({
-    url: INFLUXDB_URL,
+    url: INFLUXDB_URL || "",
     token: INFLUXDB_ADMIN_TOKEN,
   });
 
-  const writeApi = client.getWriteApi(INFLUXDB_ORG, bucket);
+  const writeApi = client.getWriteApi(INFLUXDB_ORG || "", bucket);
 
   let points = [];
   for (let measure of measures) {

@@ -9,7 +9,7 @@ const fs = require("fs");
 dotenv.config();
 
 const { CUSTOMERS } = process.env;
-const customers = JSON.parse(CUSTOMERS);
+const customers = JSON.parse(CUSTOMERS || "[]");
 
 const start = async (customer) => {
   const { bucket, dirPath } = customer;

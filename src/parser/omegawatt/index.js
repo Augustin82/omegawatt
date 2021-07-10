@@ -1,6 +1,6 @@
-/** @type {(filepath: string) => Promise<undefined>} **/
-const parseOmegawatt = async (filepath) => {
-  return;
+/** @type {(filepath: string) => Promise<Record<any, any>[]>} **/
+const parseOmegawatt = async (_filepath) => {
+  return [];
 };
 
 module.exports = {
