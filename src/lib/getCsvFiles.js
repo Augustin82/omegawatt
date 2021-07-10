@@ -1,7 +1,9 @@
 const fs = require("fs");
 
 function walkSync(dir, filelist) {
-  if (dir[dir.length - 1] != "/") dir = dir.concat("/");
+  if (dir[dir.length - 1] != "/") {
+    dir = dir.concat("/");
+  }
 
   files = fs.readdirSync(dir);
   filelist = filelist || [];

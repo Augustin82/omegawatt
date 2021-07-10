@@ -9,7 +9,7 @@
   "license": "MIT",
   "scripts": {
     "compose": "docker-compose up --build",
-    "lint:js": "eslint_d --fix '**/*.js' '*.js'",
+    "lint": "eslint_d --fix '**/*.js'",
     "start": "node src/index.js"
   },
   "dependencies": {
