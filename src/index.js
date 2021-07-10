@@ -28,7 +28,16 @@ const start = async (customer) => {
 
     for (let csvFile of csvFiles) {
       logger.info(`start processing file ${csvFile}`);
-      const measures = await buildMeasures(csvFile);
+      let measures;
+      try {
+        measures = await buildMeasures(csvFile);
+      } catch (err) {
+        logger.error("Error when building measures", err);
+        fs.renameSync(
+          csvFile,
+          path.join(dirPath, projectName, "_error", path.basename(csvFile))
+        );
+      }
       try {
         await saveMeasures(customer, projectName, measures);
         logger.info(`end processing file ${csvFile}`);
@@ -37,7 +46,7 @@ const start = async (customer) => {
           path.join(dirPath, projectName, "_done", path.basename(csvFile))
         );
       } catch (err) {
-        logger.error(err);
+        logger.error("Error when saving measures", err);
         fs.renameSync(
           csvFile,
           path.join(dirPath, projectName, "_error", path.basename(csvFile))

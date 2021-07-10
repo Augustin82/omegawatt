@@ -6,6 +6,17 @@ const { guessDelimiter } = require("../../lib");
 const voltageOffset = 4;
 const measuresOffset = 12;
 
+const isAmountOfColumnsValid = (row) => {
+  const length = row.length;
+  if (length < voltageOffset + measuresOffset) {
+    return false;
+  }
+  if ((length - voltageOffset - measuresOffset) % 12 !== 0) {
+    return false;
+  }
+  return true;
+};
+
 const firstRowToMetadata = (fileContent, delimiter) => {
   const csvOptions = {
     delimiter,
@@ -14,7 +25,20 @@ const firstRowToMetadata = (fileContent, delimiter) => {
     skip_empty_lines: true,
   };
 
-  const row = parse(fileContent, csvOptions)[0];
+  const rows = parse(fileContent, csvOptions);
+  if (!rows || !rows.length) {
+    console.log("I'm throwing, tho?");
+    throw Error("Could not find any data in the header!");
+  }
+  const row = rows[0];
+  if (!row || !row.length) {
+    throw Error("Could not find any data in the header!");
+  }
+
+  if (!isAmountOfColumnsValid(row)) {
+    throw Error("Incorrect amount of columns");
+  }
+
   const devices = [row[voltageOffset]];
 
   let offset = voltageOffset + measuresOffset;
