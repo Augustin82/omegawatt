@@ -3,6 +3,10 @@
   "env": {
     "node": true
   },
+  "globals": {
+    "describe": false,
+    "it": false
+  },
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "project": ["tsconfig.json"],
