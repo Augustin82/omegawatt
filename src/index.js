@@ -24,7 +24,6 @@ const start = async (customer) => {
     createFileIfNotExists(path.join(dirPath, projectName, "_done"));
     createFileIfNotExists(path.join(dirPath, projectName, "_error"));
 
-    //TODO: prendre aussi les fichier tsv
     const csvFiles = getCsvFiles(projectDir);
 
     for (let csvFile of csvFiles) {

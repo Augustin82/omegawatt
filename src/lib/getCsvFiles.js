@@ -8,10 +8,11 @@ function walkSync(dir, filelist) {
   let files = fs.readdirSync(dir);
   filelist = filelist || [];
   files.forEach(function (file) {
-    if (!file.startsWith("_") && fs.statSync(dir + file).isDirectory()) {
-      filelist = walkSync(dir + file + "/", filelist);
+    const filepath = `${dir}${file}`;
+    if (!file.startsWith("_") && fs.statSync(filepath).isDirectory()) {
+      filelist = walkSync(`${filepath}/`, filelist);
     } else {
-      filelist.push(dir + file);
+      filelist.push(filepath);
     }
   });
   return filelist;
@@ -20,7 +21,7 @@ function walkSync(dir, filelist) {
 function getCsvFiles(dirPath) {
   const files = [];
   walkSync(dirPath, files);
-  return files.filter((file) => file.endsWith(".csv"));
+  return files.filter((file) => file.endsWith(".csv") || file.endsWith(".tsv"));
 }
 
 module.exports = getCsvFiles;
