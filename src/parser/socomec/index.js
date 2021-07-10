@@ -1,13 +1,15 @@
 const fs = require("fs");
 
-const { CSVToArray } = require("../../lib");
+const { CSVToArray, guessDelimiter } = require("../../lib");
 
 const { parseMeasure } = require("./parseMeasure");
 const { parseMeasuresMetadata } = require("./parseMeasuresMetadata");
 const { parseMainHeading } = require("./parseMainHeading");
 const { DEVICE_NAME, METADATA_KEY } = require("../constant");
 
-const parseCSV = async (filepath) => {
+const parseCSV = async (filepath, delimiter) => {
+  delimiter = delimiter || guessDelimiter(filepath);
+
   const metadatas = {
     [DEVICE_NAME]: "",
     measureMetadatas: [],
@@ -18,7 +20,7 @@ const parseCSV = async (filepath) => {
     flag: "r",
   });
 
-  const rows = CSVToArray(fileContent);
+  const rows = CSVToArray(fileContent, delimiter);
 
   const measures = [];
 
