@@ -17,6 +17,7 @@ const parseMeasure = async (row, metadatas) => {
   };
 
   for (let i = 0; i < measureMetadatas.length; i++) {
+    //TODO: should create as many measures as values
     const measureMetadata = measureMetadatas[i];
     const measureIndex = i + 1;
     measure["load_name" + measureIndex] = measureMetadata[LOAD_NAME];

@@ -16,14 +16,17 @@ async function saveMeasures(customer, projectName, measures) {
 
   let points = [];
   for (let measure of measures) {
+    //TODO: loop should be deleted
     for (let index = 1; index <= 6; index++) {
       const value = measure["value" + index];
       if (isInt(value)) {
         const point = new Point(measure["measured_value" + index])
           .timestamp(new Date(measure.measured_at))
+          //SN
           .tag("device_name", measure["device_name"])
           .tag("usage", measure["usage" + index])
           .tag("nature", measure["nature" + index])
+          //see https://github.com/Augustin82/omegawatt/issues/2
           .tag("measured_value", measure["measured_value" + index])
           .tag("unit", measure["unit" + index])
           .tag("project", projectName)
