@@ -6,6 +6,17 @@ const { guessDelimiter } = require("../../lib");
 const voltageOffset = 4;
 const measuresOffset = 12;
 
+const isAmountOfColumnsValid = (row) => {
+  const length = row.length;
+  if (length < voltageOffset + measuresOffset) {
+    return false;
+  }
+  if ((length - voltageOffset - measuresOffset) % 12 !== 0) {
+    return false;
+  }
+  return true;
+};
+
 const firstRowToMetadata = (fileContent, delimiter) => {
   const csvOptions = {
     delimiter,
@@ -14,7 +25,19 @@ const firstRowToMetadata = (fileContent, delimiter) => {
     skip_empty_lines: true,
   };
 
-  const row = parse(fileContent, csvOptions)[0];
+  const rows = parse(fileContent, csvOptions);
+  if (!rows || !rows.length) {
+    throw Error("Could not find any data in the header!");
+  }
+  const row = rows[0];
+  if (!row || !row.length) {
+    throw Error("Could not find any data in the header!");
+  }
+
+  if (!isAmountOfColumnsValid(row)) {
+    throw Error("Incorrect amount of columns");
+  }
+
   const devices = [row[voltageOffset]];
 
   let offset = voltageOffset + measuresOffset;
@@ -27,9 +50,101 @@ const firstRowToMetadata = (fileContent, delimiter) => {
   return devices;
 };
 
+const getFileType = (row) => {
+  const fileTypeString = row[0];
+  if (!fileTypeString) {
+    return null;
+  }
+
+  const regexp = /^MV_T(\d\d\d)_V...$/;
+
+  const match = fileTypeString.match(regexp);
+
+  return match && (match[1] || null);
+};
+
+const secondRowToFileType = (fileContent, delimiter) => {
+  const csvOptions = {
+    delimiter,
+    columns: false,
+    from_line: 2,
+    to_line: 2,
+    skip_empty_lines: true,
+  };
+
+  const rows = parse(fileContent, csvOptions);
+  if (!rows || !rows.length) {
+    throw Error("Could not find any data in the second header!");
+  }
+  const row = rows[0];
+  if (!row || !row.length) {
+    throw Error("Could not find any data in the second header!");
+  }
+
+  const fileType = getFileType(row);
+  if (!fileType) {
+    throw Error("Incorrect filetype");
+  }
+  return fileType;
+};
+
+const isTimestampValid = (timestamp) => {
+  // timestamp format for omegawatt:
+  // DD/MM/YY HH:mm:ss
+
+  if (!timestamp) {
+    return false;
+  }
+
+  /** @type {string[]} **/
+  const [date, time] = timestamp.trim().split(" ");
+
+  if (!date || !time) {
+    return false;
+  }
+
+  /** @type {number[]} **/
+  const [day, month, year] = date.split("/").map((s) => parseInt(s, 10));
+
+  /** @type {number[]} **/
+  const [hours, minutes, seconds] = time.split(":").map((s) => parseInt(s, 10));
+
+  if (
+    isNaN(year) ||
+    isNaN(month) ||
+    isNaN(day) ||
+    isNaN(hours) ||
+    isNaN(minutes) ||
+    isNaN(seconds)
+  ) {
+    return false;
+  }
+  const parsedDate = new Date(
+    2000 + year,
+    month - 1,
+    day,
+    hours,
+    minutes,
+    seconds
+  );
+
+  return (
+    parsedDate &&
+    parsedDate.getFullYear() === 2000 + year &&
+    parsedDate.getMonth() === month - 1 &&
+    parsedDate.getDate() === day &&
+    parsedDate.getHours() === hours &&
+    parsedDate.getMinutes() === minutes &&
+    parsedDate.getSeconds() === seconds
+  );
+};
+
 const rowToMeasures = (metadata) => (row) => {
   const measures = [];
   const timestamp = row[0];
+  if (!isTimestampValid(timestamp)) {
+    throw Error("Incorrect timestamp format");
+  }
   const project = "project_name";
   let nature, measured_value;
 
@@ -90,6 +205,8 @@ const parseOmegawatt = async (filepath, delimiter = "\t") => {
     flag: "r",
   });
 
+  const _fileType = secondRowToFileType(fileContent, delimiter);
+
   const metadata = firstRowToMetadata(fileContent, delimiter);
 
   const measures = otherRowsToMeasures(fileContent, delimiter, metadata);
@@ -99,4 +216,5 @@ const parseOmegawatt = async (filepath, delimiter = "\t") => {
 
 module.exports = {
   parseOmegawatt,
+  isTimestampValid,
 };
