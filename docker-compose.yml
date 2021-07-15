@@ -26,7 +26,7 @@ services:
     container_name: grafana
     restart: always
     ports:
-      - 3000:3000  # port pour accéder à l'interface web de Grafana
+      - 80:3000  # port pour accéder à l'interface web de Grafana
     links:
       - influxdb:influxdb
     environment:
