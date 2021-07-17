@@ -5,11 +5,11 @@ const { LOAD_NAME, USAGE, NATURE, MEASURED_VALUE, UNIT, SCALE } = METADATA_KEY;
 
 // 2020-05-27T11:00:00,186706,0,26,
 
-/** @typedef {{ measureMetadatas: any[] }} Metadata **/
+/** @typedef {{ measureMetadatas: any[] }} Metadata */
 
 /**
  * @type {(row: any, metadatas: Metadata) => Promise<Record<any, any>[]> }
- **/
+ */
 const parseMeasure = async (row, metadatas) => {
   const { measureMetadatas } = metadatas;
   const measureDateAsString = row[0];

@@ -1,6 +1,6 @@
 [
   {
-    "timestamp": "03/07/21 22:30:00",
+    "measured_at": "2021-07-03T20:30:00.000Z",
     "nature": "Ph1",
     "device_name": "02000012",
     "measured_value": "V",
@@ -8,7 +8,7 @@
     "project": "project_name"
   },
   {
-    "timestamp": "03/07/21 22:30:00",
+    "measured_at": "2021-07-03T20:30:00.000Z",
     "nature": "Ph2",
     "device_name": "02000012",
     "measured_value": "V",
@@ -16,7 +16,7 @@
     "project": "project_name"
   },
   {
-    "timestamp": "03/07/21 22:30:00",
+    "measured_at": "2021-07-03T20:30:00.000Z",
     "nature": "Ph3",
     "device_name": "02000012",
     "measured_value": "V",
@@ -24,7 +24,7 @@
     "project": "project_name"
   },
   {
-    "timestamp": "03/07/21 22:30:00",
+    "measured_at": "2021-07-03T20:30:00.000Z",
     "nature": "Voie1",
     "device_name": "02000012",
     "measured_value": "P",
@@ -32,7 +32,7 @@
     "project": "project_name"
   },
   {
-    "timestamp": "03/07/21 22:30:00",
+    "measured_at": "2021-07-03T20:30:00.000Z",
     "nature": "Voie1",
     "device_name": "02000012",
     "measured_value": "Q",
@@ -40,7 +40,7 @@
     "project": "project_name"
   },
   {
-    "timestamp": "03/07/21 22:30:00",
+    "measured_at": "2021-07-03T20:30:00.000Z",
     "nature": "Voie2",
     "device_name": "02000012",
     "measured_value": "P",
@@ -48,7 +48,7 @@
     "project": "project_name"
   },
   {
-    "timestamp": "03/07/21 22:30:00",
+    "measured_at": "2021-07-03T20:30:00.000Z",
     "nature": "Voie2",
     "device_name": "02000012",
     "measured_value": "Q",
@@ -56,7 +56,7 @@
     "project": "project_name"
   },
   {
-    "timestamp": "03/07/21 22:30:00",
+    "measured_at": "2021-07-03T20:30:00.000Z",
     "nature": "Voie3",
     "device_name": "02000012",
     "measured_value": "P",
@@ -64,7 +64,7 @@
     "project": "project_name"
   },
   {
-    "timestamp": "03/07/21 22:30:00",
+    "measured_at": "2021-07-03T20:30:00.000Z",
     "nature": "Voie3",
     "device_name": "02000012",
     "measured_value": "Q",
@@ -72,7 +72,7 @@
     "project": "project_name"
   },
   {
-    "timestamp": "03/07/21 22:30:00",
+    "measured_at": "2021-07-03T20:30:00.000Z",
     "nature": "Voie4",
     "device_name": "02000012",
     "measured_value": "P",
@@ -80,7 +80,7 @@
     "project": "project_name"
   },
   {
-    "timestamp": "03/07/21 22:30:00",
+    "measured_at": "2021-07-03T20:30:00.000Z",
     "nature": "Voie4",
     "device_name": "02000012",
     "measured_value": "Q",
@@ -88,7 +88,7 @@
     "project": "project_name"
   },
   {
-    "timestamp": "03/07/21 22:30:00",
+    "measured_at": "2021-07-03T20:30:00.000Z",
     "nature": "Voie5",
     "device_name": "02000012",
     "measured_value": "P",
@@ -96,7 +96,7 @@
     "project": "project_name"
   },
   {
-    "timestamp": "03/07/21 22:30:00",
+    "measured_at": "2021-07-03T20:30:00.000Z",
     "nature": "Voie5",
     "device_name": "02000012",
     "measured_value": "Q",
@@ -104,7 +104,7 @@
     "project": "project_name"
   },
   {
-    "timestamp": "03/07/21 22:30:00",
+    "measured_at": "2021-07-03T20:30:00.000Z",
     "nature": "Voie6",
     "device_name": "02000012",
     "measured_value": "P",
@@ -112,7 +112,7 @@
     "project": "project_name"
   },
   {
-    "timestamp": "03/07/21 22:30:00",
+    "measured_at": "2021-07-03T20:30:00.000Z",
     "nature": "Voie1",
     "device_name": "02000012",
     "measured_value": "Q",
@@ -120,7 +120,7 @@
     "project": "project_name"
   },
   {
-    "timestamp": "03/07/21 22:30:00",
+    "measured_at": "2021-07-03T20:30:00.000Z",
     "nature": "Voie1",
     "device_name": "04000002",
     "measured_value": "P",
@@ -128,7 +128,7 @@
     "project": "project_name"
   },
   {
-    "timestamp": "03/07/21 22:30:00",
+    "measured_at": "2021-07-03T20:30:00.000Z",
     "nature": "Voie1",
     "device_name": "04000002",
     "measured_value": "Q",
@@ -136,7 +136,7 @@
     "project": "project_name"
   },
   {
-    "timestamp": "03/07/21 22:30:00",
+    "measured_at": "2021-07-03T20:30:00.000Z",
     "nature": "Voie2",
     "device_name": "04000002",
     "measured_value": "P",
@@ -144,7 +144,7 @@
     "project": "project_name"
   },
   {
-    "timestamp": "03/07/21 22:30:00",
+    "measured_at": "2021-07-03T20:30:00.000Z",
     "nature": "Voie2",
     "device_name": "04000002",
     "measured_value": "Q",
@@ -152,7 +152,7 @@
     "project": "project_name"
   },
   {
-    "timestamp": "03/07/21 22:30:00",
+    "measured_at": "2021-07-03T20:30:00.000Z",
     "nature": "Voie3",
     "device_name": "04000002",
     "measured_value": "P",
@@ -160,7 +160,7 @@
     "project": "project_name"
   },
   {
-    "timestamp": "03/07/21 22:30:00",
+    "measured_at": "2021-07-03T20:30:00.000Z",
     "nature": "Voie3",
     "device_name": "04000002",
     "measured_value": "Q",
@@ -168,7 +168,7 @@
     "project": "project_name"
   },
   {
-    "timestamp": "03/07/21 22:30:00",
+    "measured_at": "2021-07-03T20:30:00.000Z",
     "nature": "Voie4",
     "device_name": "04000002",
     "measured_value": "P",
@@ -176,7 +176,7 @@
     "project": "project_name"
   },
   {
-    "timestamp": "03/07/21 22:30:00",
+    "measured_at": "2021-07-03T20:30:00.000Z",
     "nature": "Voie4",
     "device_name": "04000002",
     "measured_value": "Q",
@@ -184,7 +184,7 @@
     "project": "project_name"
   },
   {
-    "timestamp": "03/07/21 22:30:00",
+    "measured_at": "2021-07-03T20:30:00.000Z",
     "nature": "Voie5",
     "device_name": "04000002",
     "measured_value": "P",
@@ -192,7 +192,7 @@
     "project": "project_name"
   },
   {
-    "timestamp": "03/07/21 22:30:00",
+    "measured_at": "2021-07-03T20:30:00.000Z",
     "nature": "Voie5",
     "device_name": "04000002",
     "measured_value": "Q",
@@ -200,7 +200,7 @@
     "project": "project_name"
   },
   {
-    "timestamp": "03/07/21 22:30:00",
+    "measured_at": "2021-07-03T20:30:00.000Z",
     "nature": "Voie6",
     "device_name": "04000002",
     "measured_value": "P",
@@ -208,7 +208,7 @@
     "project": "project_name"
   },
   {
-    "timestamp": "03/07/21 22:30:00",
+    "measured_at": "2021-07-03T20:30:00.000Z",
     "nature": "Voie1",
     "device_name": "04000002",
     "measured_value": "Q",
@@ -216,7 +216,7 @@
     "project": "project_name"
   },
   {
-    "timestamp": "03/07/21 22:30:00",
+    "measured_at": "2021-07-03T20:30:00.000Z",
     "nature": "Voie1",
     "device_name": "04000004",
     "measured_value": "P",
@@ -224,7 +224,7 @@
     "project": "project_name"
   },
   {
-    "timestamp": "03/07/21 22:30:00",
+    "measured_at": "2021-07-03T20:30:00.000Z",
     "nature": "Voie1",
     "device_name": "04000004",
     "measured_value": "Q",
@@ -232,7 +232,7 @@
     "project": "project_name"
   },
   {
-    "timestamp": "03/07/21 22:30:00",
+    "measured_at": "2021-07-03T20:30:00.000Z",
     "nature": "Voie2",
     "device_name": "04000004",
     "measured_value": "P",
@@ -240,7 +240,7 @@
     "project": "project_name"
   },
   {
-    "timestamp": "03/07/21 22:30:00",
+    "measured_at": "2021-07-03T20:30:00.000Z",
     "nature": "Voie2",
     "device_name": "04000004",
     "measured_value": "Q",
@@ -248,7 +248,7 @@
     "project": "project_name"
   },
   {
-    "timestamp": "03/07/21 22:30:00",
+    "measured_at": "2021-07-03T20:30:00.000Z",
     "nature": "Voie3",
     "device_name": "04000004",
     "measured_value": "P",
@@ -256,7 +256,7 @@
     "project": "project_name"
   },
   {
-    "timestamp": "03/07/21 22:30:00",
+    "measured_at": "2021-07-03T20:30:00.000Z",
     "nature": "Voie3",
     "device_name": "04000004",
     "measured_value": "Q",
@@ -264,7 +264,7 @@
     "project": "project_name"
   },
   {
-    "timestamp": "03/07/21 22:30:00",
+    "measured_at": "2021-07-03T20:30:00.000Z",
     "nature": "Voie4",
     "device_name": "04000004",
     "measured_value": "P",
@@ -272,7 +272,7 @@
     "project": "project_name"
   },
   {
-    "timestamp": "03/07/21 22:30:00",
+    "measured_at": "2021-07-03T20:30:00.000Z",
     "nature": "Voie4",
     "device_name": "04000004",
     "measured_value": "Q",
@@ -280,7 +280,7 @@
     "project": "project_name"
   },
   {
-    "timestamp": "03/07/21 22:30:00",
+    "measured_at": "2021-07-03T20:30:00.000Z",
     "nature": "Voie5",
     "device_name": "04000004",
     "measured_value": "P",
@@ -288,7 +288,7 @@
     "project": "project_name"
   },
   {
-    "timestamp": "03/07/21 22:30:00",
+    "measured_at": "2021-07-03T20:30:00.000Z",
     "nature": "Voie5",
     "device_name": "04000004",
     "measured_value": "Q",
@@ -296,7 +296,7 @@
     "project": "project_name"
   },
   {
-    "timestamp": "03/07/21 22:30:00",
+    "measured_at": "2021-07-03T20:30:00.000Z",
     "nature": "Voie6",
     "device_name": "04000004",
     "measured_value": "P",
@@ -304,7 +304,7 @@
     "project": "project_name"
   },
   {
-    "timestamp": "03/07/21 22:30:00",
+    "measured_at": "2021-07-03T20:30:00.000Z",
     "nature": "Voie1",
     "device_name": "04000004",
     "measured_value": "Q",
@@ -312,7 +312,7 @@
     "project": "project_name"
   },
   {
-    "timestamp": "03/07/21 22:40:00",
+    "measured_at": "2021-07-03T20:40:00.000Z",
     "nature": "Ph1",
     "device_name": "02000012",
     "measured_value": "V",
@@ -320,7 +320,7 @@
     "project": "project_name"
   },
   {
-    "timestamp": "03/07/21 22:40:00",
+    "measured_at": "2021-07-03T20:40:00.000Z",
     "nature": "Ph2",
     "device_name": "02000012",
     "measured_value": "V",
@@ -328,7 +328,7 @@
     "project": "project_name"
   },
   {
-    "timestamp": "03/07/21 22:40:00",
+    "measured_at": "2021-07-03T20:40:00.000Z",
     "nature": "Ph3",
     "device_name": "02000012",
     "measured_value": "V",
@@ -336,7 +336,7 @@
     "project": "project_name"
   },
   {
-    "timestamp": "03/07/21 22:40:00",
+    "measured_at": "2021-07-03T20:40:00.000Z",
     "nature": "Voie1",
     "device_name": "02000012",
     "measured_value": "P",
@@ -344,7 +344,7 @@
     "project": "project_name"
   },
   {
-    "timestamp": "03/07/21 22:40:00",
+    "measured_at": "2021-07-03T20:40:00.000Z",
     "nature": "Voie1",
     "device_name": "02000012",
     "measured_value": "Q",
@@ -352,7 +352,7 @@
     "project": "project_name"
   },
   {
-    "timestamp": "03/07/21 22:40:00",
+    "measured_at": "2021-07-03T20:40:00.000Z",
     "nature": "Voie2",
     "device_name": "02000012",
     "measured_value": "P",
@@ -360,7 +360,7 @@
     "project": "project_name"
   },
   {
-    "timestamp": "03/07/21 22:40:00",
+    "measured_at": "2021-07-03T20:40:00.000Z",
     "nature": "Voie2",
     "device_name": "02000012",
     "measured_value": "Q",
@@ -368,7 +368,7 @@
     "project": "project_name"
   },
   {
-    "timestamp": "03/07/21 22:40:00",
+    "measured_at": "2021-07-03T20:40:00.000Z",
     "nature": "Voie3",
     "device_name": "02000012",
     "measured_value": "P",
@@ -376,7 +376,7 @@
     "project": "project_name"
   },
   {
-    "timestamp": "03/07/21 22:40:00",
+    "measured_at": "2021-07-03T20:40:00.000Z",
     "nature": "Voie3",
     "device_name": "02000012",
     "measured_value": "Q",
@@ -384,7 +384,7 @@
     "project": "project_name"
   },
   {
-    "timestamp": "03/07/21 22:40:00",
+    "measured_at": "2021-07-03T20:40:00.000Z",
     "nature": "Voie4",
     "device_name": "02000012",
     "measured_value": "P",
@@ -392,7 +392,7 @@
     "project": "project_name"
   },
   {
-    "timestamp": "03/07/21 22:40:00",
+    "measured_at": "2021-07-03T20:40:00.000Z",
     "nature": "Voie4",
     "device_name": "02000012",
     "measured_value": "Q",
@@ -400,7 +400,7 @@
     "project": "project_name"
   },
   {
-    "timestamp": "03/07/21 22:40:00",
+    "measured_at": "2021-07-03T20:40:00.000Z",
     "nature": "Voie5",
     "device_name": "02000012",
     "measured_value": "P",
@@ -408,7 +408,7 @@
     "project": "project_name"
   },
   {
-    "timestamp": "03/07/21 22:40:00",
+    "measured_at": "2021-07-03T20:40:00.000Z",
     "nature": "Voie5",
     "device_name": "02000012",
     "measured_value": "Q",
@@ -416,7 +416,7 @@
     "project": "project_name"
   },
   {
-    "timestamp": "03/07/21 22:40:00",
+    "measured_at": "2021-07-03T20:40:00.000Z",
     "nature": "Voie6",
     "device_name": "02000012",
     "measured_value": "P",
@@ -424,7 +424,7 @@
     "project": "project_name"
   },
   {
-    "timestamp": "03/07/21 22:40:00",
+    "measured_at": "2021-07-03T20:40:00.000Z",
     "nature": "Voie1",
     "device_name": "02000012",
     "measured_value": "Q",
@@ -432,7 +432,7 @@
     "project": "project_name"
   },
   {
-    "timestamp": "03/07/21 22:40:00",
+    "measured_at": "2021-07-03T20:40:00.000Z",
     "nature": "Voie1",
     "device_name": "04000002",
     "measured_value": "P",
@@ -440,7 +440,7 @@
     "project": "project_name"
   },
   {
-    "timestamp": "03/07/21 22:40:00",
+    "measured_at": "2021-07-03T20:40:00.000Z",
     "nature": "Voie1",
     "device_name": "04000002",
     "measured_value": "Q",
@@ -448,7 +448,7 @@
     "project": "project_name"
   },
   {
-    "timestamp": "03/07/21 22:40:00",
+    "measured_at": "2021-07-03T20:40:00.000Z",
     "nature": "Voie2",
     "device_name": "04000002",
     "measured_value": "P",
@@ -456,7 +456,7 @@
     "project": "project_name"
   },
   {
-    "timestamp": "03/07/21 22:40:00",
+    "measured_at": "2021-07-03T20:40:00.000Z",
     "nature": "Voie2",
     "device_name": "04000002",
     "measured_value": "Q",
@@ -464,7 +464,7 @@
     "project": "project_name"
   },
   {
-    "timestamp": "03/07/21 22:40:00",
+    "measured_at": "2021-07-03T20:40:00.000Z",
     "nature": "Voie3",
     "device_name": "04000002",
     "measured_value": "P",
@@ -472,7 +472,7 @@
     "project": "project_name"
   },
   {
-    "timestamp": "03/07/21 22:40:00",
+    "measured_at": "2021-07-03T20:40:00.000Z",
     "nature": "Voie3",
     "device_name": "04000002",
     "measured_value": "Q",
@@ -480,7 +480,7 @@
     "project": "project_name"
   },
   {
-    "timestamp": "03/07/21 22:40:00",
+    "measured_at": "2021-07-03T20:40:00.000Z",
     "nature": "Voie4",
     "device_name": "04000002",
     "measured_value": "P",
@@ -488,7 +488,7 @@
     "project": "project_name"
   },
   {
-    "timestamp": "03/07/21 22:40:00",
+    "measured_at": "2021-07-03T20:40:00.000Z",
     "nature": "Voie4",
     "device_name": "04000002",
     "measured_value": "Q",
@@ -496,7 +496,7 @@
     "project": "project_name"
   },
   {
-    "timestamp": "03/07/21 22:40:00",
+    "measured_at": "2021-07-03T20:40:00.000Z",
     "nature": "Voie5",
     "device_name": "04000002",
     "measured_value": "P",
@@ -504,7 +504,7 @@
     "project": "project_name"
   },
   {
-    "timestamp": "03/07/21 22:40:00",
+    "measured_at": "2021-07-03T20:40:00.000Z",
     "nature": "Voie5",
     "device_name": "04000002",
     "measured_value": "Q",
@@ -512,7 +512,7 @@
     "project": "project_name"
   },
   {
-    "timestamp": "03/07/21 22:40:00",
+    "measured_at": "2021-07-03T20:40:00.000Z",
     "nature": "Voie6",
     "device_name": "04000002",
     "measured_value": "P",
@@ -520,7 +520,7 @@
     "project": "project_name"
   },
   {
-    "timestamp": "03/07/21 22:40:00",
+    "measured_at": "2021-07-03T20:40:00.000Z",
     "nature": "Voie1",
     "device_name": "04000002",
     "measured_value": "Q",
@@ -528,7 +528,7 @@
     "project": "project_name"
   },
   {
-    "timestamp": "03/07/21 22:40:00",
+    "measured_at": "2021-07-03T20:40:00.000Z",
     "nature": "Voie1",
     "device_name": "04000004",
     "measured_value": "P",
@@ -536,7 +536,7 @@
     "project": "project_name"
   },
   {
-    "timestamp": "03/07/21 22:40:00",
+    "measured_at": "2021-07-03T20:40:00.000Z",
     "nature": "Voie1",
     "device_name": "04000004",
     "measured_value": "Q",
@@ -544,7 +544,7 @@
     "project": "project_name"
   },
   {
-    "timestamp": "03/07/21 22:40:00",
+    "measured_at": "2021-07-03T20:40:00.000Z",
     "nature": "Voie2",
     "device_name": "04000004",
     "measured_value": "P",
@@ -552,7 +552,7 @@
     "project": "project_name"
   },
   {
-    "timestamp": "03/07/21 22:40:00",
+    "measured_at": "2021-07-03T20:40:00.000Z",
     "nature": "Voie2",
     "device_name": "04000004",
     "measured_value": "Q",
@@ -560,7 +560,7 @@
     "project": "project_name"
   },
   {
-    "timestamp": "03/07/21 22:40:00",
+    "measured_at": "2021-07-03T20:40:00.000Z",
     "nature": "Voie3",
     "device_name": "04000004",
     "measured_value": "P",
@@ -568,7 +568,7 @@
     "project": "project_name"
   },
   {
-    "timestamp": "03/07/21 22:40:00",
+    "measured_at": "2021-07-03T20:40:00.000Z",
     "nature": "Voie3",
     "device_name": "04000004",
     "measured_value": "Q",
@@ -576,7 +576,7 @@
     "project": "project_name"
   },
   {
-    "timestamp": "03/07/21 22:40:00",
+    "measured_at": "2021-07-03T20:40:00.000Z",
     "nature": "Voie4",
     "device_name": "04000004",
     "measured_value": "P",
@@ -584,7 +584,7 @@
     "project": "project_name"
   },
   {
-    "timestamp": "03/07/21 22:40:00",
+    "measured_at": "2021-07-03T20:40:00.000Z",
     "nature": "Voie4",
     "device_name": "04000004",
     "measured_value": "Q",
@@ -592,7 +592,7 @@
     "project": "project_name"
   },
   {
-    "timestamp": "03/07/21 22:40:00",
+    "measured_at": "2021-07-03T20:40:00.000Z",
     "nature": "Voie5",
     "device_name": "04000004",
     "measured_value": "P",
@@ -600,7 +600,7 @@
     "project": "project_name"
   },
   {
-    "timestamp": "03/07/21 22:40:00",
+    "measured_at": "2021-07-03T20:40:00.000Z",
     "nature": "Voie5",
     "device_name": "04000004",
     "measured_value": "Q",
@@ -608,7 +608,7 @@
     "project": "project_name"
   },
   {
-    "timestamp": "03/07/21 22:40:00",
+    "measured_at": "2021-07-03T20:40:00.000Z",
     "nature": "Voie6",
     "device_name": "04000004",
     "measured_value": "P",
@@ -616,7 +616,7 @@
     "project": "project_name"
   },
   {
-    "timestamp": "03/07/21 22:40:00",
+    "measured_at": "2021-07-03T20:40:00.000Z",
     "nature": "Voie1",
     "device_name": "04000004",
     "measured_value": "Q",

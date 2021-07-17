@@ -1,8 +1,5 @@
 var expect = require("chai").expect;
-var {
-  parseOmegawatt,
-  isTimestampValid,
-} = require("../../src/parser/omegawatt");
+var { parseOmegawatt, timestampToDate } = require("../../src/parser/omegawatt");
 var fs = require("fs");
 
 var empty = "./test/fixtures/parser/empty.csv";
@@ -18,8 +15,7 @@ var fixture1_json = "./test/fixtures/parser/omegawatt/fixture1.json";
 describe("Omegawatt utils", () => {
   describe("timestamp validator", () => {
     it("can detect if a timestamp is valid or not", () => {
-      const VALID = true;
-      const INVALID = false;
+      const INVALID = null;
       const fixtures = [
         ["", INVALID],
         ["blabla", INVALID],
@@ -30,12 +26,12 @@ describe("Omegawatt utils", () => {
         ["03/07/21 22 30 00", INVALID],
         ["33/07/21 22:30:00", INVALID],
         ["03/17/21 22:30:00", INVALID],
-        ["03/07/21 22:30:00", VALID],
+        ["03/07/21 22:30:00", new Date(2021, 6, 3, 22, 30, 0, 0).toISOString()],
       ];
 
       for (let i = 0; i < fixtures.length; i++) {
         const [timestamp, validity] = fixtures[i];
-        const isValid = isTimestampValid(timestamp);
+        const isValid = timestampToDate(timestamp);
         expect(
           isValid,
           `Timestamp '${timestamp}' should have validity ${validity} but has validity ${isValid}`
@@ -112,13 +108,14 @@ describe("Omegawatt parser", () => {
 
   it("handles an actual production file", async () => {
     const prefix = "./test/fixtures/parser/omegawatt/";
-    /** @type {[string, number][]} **/
+    /** @type {[string, number][]} */
     const prodFiles = [
       ["T300_210713_103238.tsv", 255],
       ["T300_210713_152206.tsv", 510],
       ["T300_210713_154545.tsv", 51],
       ["T300_210714_020500.tsv", 3213],
       ["T300_210715_020500.tsv", 7344],
+      ["T300_210716_020500.tsv", 7344],
     ];
     for (const [prodFile, length] of prodFiles) {
       const result = await parseOmegawatt(`${prefix}/${prodFile}`);
