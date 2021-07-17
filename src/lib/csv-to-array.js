@@ -16,7 +16,7 @@ function CSVToArray(strData, strDelimiter) {
 
   // Create an array to hold our data. Give the array
   // a default empty first row.
-  /** @type {string[][]} **/
+  /** @type {string[][]} */
   var arrData = [[]];
 
   // Create an array to hold our individual pattern

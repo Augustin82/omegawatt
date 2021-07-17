@@ -88,25 +88,25 @@ const secondRowToFileType = (fileContent, delimiter) => {
   return fileType;
 };
 
-const isTimestampValid = (timestamp) => {
+const timestampToDate = (timestamp) => {
   // timestamp format for omegawatt:
   // DD/MM/YY HH:mm:ss
 
   if (!timestamp) {
-    return false;
+    return null;
   }
 
-  /** @type {string[]} **/
+  /** @type {string[]} */
   const [date, time] = timestamp.trim().split(" ");
 
   if (!date || !time) {
-    return false;
+    return null;
   }
 
-  /** @type {number[]} **/
+  /** @type {number[]} */
   const [day, month, year] = date.split("/").map((s) => parseInt(s, 10));
 
-  /** @type {number[]} **/
+  /** @type {number[]} */
   const [hours, minutes, seconds] = time.split(":").map((s) => parseInt(s, 10));
 
   if (
@@ -117,7 +117,7 @@ const isTimestampValid = (timestamp) => {
     isNaN(minutes) ||
     isNaN(seconds)
   ) {
-    return false;
+    return null;
   }
   const parsedDate = new Date(
     2000 + year,
@@ -128,7 +128,7 @@ const isTimestampValid = (timestamp) => {
     seconds
   );
 
-  return (
+  if (
     parsedDate &&
     parsedDate.getFullYear() === 2000 + year &&
     parsedDate.getMonth() === month - 1 &&
@@ -136,13 +136,17 @@ const isTimestampValid = (timestamp) => {
     parsedDate.getHours() === hours &&
     parsedDate.getMinutes() === minutes &&
     parsedDate.getSeconds() === seconds
-  );
+  ) {
+    return parsedDate.toISOString();
+  }
+
+  return null;
 };
 
 const rowToMeasures = (metadata) => (row) => {
   const measures = [];
-  const timestamp = row[0];
-  if (!isTimestampValid(timestamp)) {
+  const measured_at = timestampToDate(row[0]);
+  if (!measured_at) {
     throw Error("Incorrect timestamp format");
   }
   const project = "project_name";
@@ -166,7 +170,7 @@ const rowToMeasures = (metadata) => (row) => {
     const device_name = metadata[device_offset];
     const value = row[offset];
     const measure = {
-      timestamp,
+      measured_at,
       nature,
       device_name,
       measured_value,
@@ -196,7 +200,7 @@ const otherRowsToMeasures = (fileContent, delimiter, metadata) => {
   return measures;
 };
 
-/** @type {(filepath: string, delimiter?: string) => Promise<Record<any, any>[]>} **/
+/** @type {(filepath: string, delimiter?: string) => Promise<Record<any, any>[]>} */
 const parseOmegawatt = async (filepath, delimiter = "\t") => {
   delimiter = delimiter || guessDelimiter(filepath);
 
@@ -216,5 +220,5 @@ const parseOmegawatt = async (filepath, delimiter = "\t") => {
 
 module.exports = {
   parseOmegawatt,
-  isTimestampValid,
+  timestampToDate,
 };
