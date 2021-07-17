@@ -109,4 +109,21 @@ describe("Omegawatt parser", () => {
 
     expect(result).to.eql(expected);
   });
+
+  it("handles an actual production file", async () => {
+    const prefix = "./test/fixtures/parser/omegawatt/";
+    /** @type {[string, number][]} **/
+    const prodFiles = [
+      ["T300_210713_103238.tsv", 255],
+      ["T300_210713_152206.tsv", 510],
+      ["T300_210713_154545.tsv", 51],
+      ["T300_210714_020500.tsv", 3213],
+      ["T300_210715_020500.tsv", 7344],
+    ];
+    for (const [prodFile, length] of prodFiles) {
+      const result = await parseOmegawatt(`${prefix}/${prodFile}`);
+
+      expect(result).to.have.length(length);
+    }
+  });
 });
