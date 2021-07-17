@@ -12,7 +12,7 @@ const { parseOmegawatt } = require("./parser/omegawatt");
 const buildMeasures = async (filepath) => {
   let parser;
 
-  if (filepath.includes("socomec")) {
+  if (filepath.toLowerCase().includes("socomec")) {
     parser = parseSocomec;
   } else {
     parser = parseOmegawatt;
