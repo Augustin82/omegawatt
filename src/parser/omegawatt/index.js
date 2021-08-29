@@ -7,7 +7,18 @@ const { guessDelimiter } = require("../../lib");
 const voltageOffset = 4;
 const measuresOffset = 12;
 
-const isAmountOfColumnsValid = (row) => {
+const getPhaseType = (row) => {
+  const volts = row.filter((v) => v === "Volts");
+  if (volts === 1) {
+    return "Mono";
+  }
+  if (volts === 3) {
+    return "Tri";
+  }
+  throw Error("Invalid amount of Volts in header");
+};
+
+const isAmountOfColumnsValid = (row, phaseType) => {
   const length = row.length;
   if (length < voltageOffset + measuresOffset) {
     return false;
@@ -35,7 +46,9 @@ const firstRowToMetadata = (fileContent, delimiter) => {
     throw Error("Could not find any data in the header!");
   }
 
-  if (!isAmountOfColumnsValid(row)) {
+  const phaseType = getPhaseType(row); // "Mono" | "Tri"
+
+  if (!isAmountOfColumnsValid(row, phaseType)) {
     throw Error("Incorrect amount of columns");
   }
 
