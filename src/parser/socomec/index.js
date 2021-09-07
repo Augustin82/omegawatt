@@ -7,7 +7,7 @@ const { parseMeasuresMetadata } = require("./parseMeasuresMetadata");
 const { parseMainHeading } = require("./parseMainHeading");
 const { DEVICE_NAME, METADATA_KEY } = require("../constant");
 
-const parseSocomec = async (filepath, delimiter) => {
+const parseSocomec = async (filepath, deviceTable, delimiter) => {
   delimiter = delimiter || guessDelimiter(filepath);
 
   const metadatas = {

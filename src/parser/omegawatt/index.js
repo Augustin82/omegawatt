@@ -106,7 +106,8 @@ const timestampToDate = (timestamp) => {
     .toISO();
 };
 
-const rowToMeasures = (metadata) => (row) => {
+/** @param {DeviceTable} deviceTable **/
+const rowToMeasures = (metadata, deviceTable) => (row) => {
   const measures = [];
   const measured_at = timestampToDate(row[0]);
   if (!measured_at) {
@@ -117,6 +118,7 @@ const rowToMeasures = (metadata) => (row) => {
   let offset = 1;
 
   while (row[offset]) {
+    let voieNumber;
     if (offset < 1) {
       // nope
     } else if (offset > 0 && offset < 4) {
@@ -129,9 +131,13 @@ const rowToMeasures = (metadata) => (row) => {
       unit = columnForDevice % 2 === 0 ? "Var" : "W"; // "Q" : "P"
     }
     const device_offset = ~~((offset - voltageOffset) / 12);
-    const device_name = "todo";
     const sn = metadata[device_offset];
-    const value = row[offset];
+    const {
+      device_name,
+      coeff,
+      usage: _usage,
+    } = deviceTable(sn, `${voieNumber}`, measured_at);
+    const value = row[offset] * coeff;
     const measure = {
       measured_at,
       sn,
@@ -148,8 +154,9 @@ const rowToMeasures = (metadata) => (row) => {
   return measures;
 };
 
-const otherRowsToMeasures = (fileContent, delimiter, metadata) => {
-  const toMeasures = rowToMeasures(metadata);
+/** @param {DeviceTable} deviceTable **/
+const otherRowsToMeasures = (fileContent, delimiter, deviceTable, metadata) => {
+  const toMeasures = rowToMeasures(metadata, deviceTable);
   const csvOptions = {
     delimiter,
     columns: false,
@@ -164,8 +171,11 @@ const otherRowsToMeasures = (fileContent, delimiter, metadata) => {
   return measures;
 };
 
-/** @type {(filepath: string, delimiter?: string) => Promise<Record<any, any>[]>} */
-const parseOmegawatt = async (filepath, delimiter = "\t") => {
+/** @typedef {{ device_name: string, coeff: number, usage: string }} DeviceInfo **/
+/** @typedef {(serialNumber: string, channel: string, timestamp: string) => DeviceInfo } DeviceTable **/
+
+/** @type {(filepath: string, deviceTable: DeviceTable, delimiter?: string) => Promise<Record<any, any>[]>} */
+const parseOmegawatt = async (filepath, deviceTable, delimiter = "\t") => {
   delimiter = delimiter || guessDelimiter(filepath);
 
   const fileContent = fs.readFileSync(filepath, {
@@ -177,7 +187,12 @@ const parseOmegawatt = async (filepath, delimiter = "\t") => {
 
   const metadata = firstRowToMetadata(fileContent, delimiter);
 
-  const measures = otherRowsToMeasures(fileContent, delimiter, metadata);
+  const measures = otherRowsToMeasures(
+    fileContent,
+    delimiter,
+    deviceTable,
+    metadata
+  );
 
   return measures;
 };

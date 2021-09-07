@@ -1,6 +1,7 @@
 const dotenv = require("dotenv");
 const path = require("path");
 const { logger, getProjectDirs, getDeviceDirs } = require("./lib");
+const { getDeviceTable } = require("./parser/deviceTable");
 const { buildMeasures } = require("./buildMeasures");
 const { saveMeasures } = require("./saveMeasures");
 const getCsvFiles = require("./lib/getCsvFiles");
@@ -21,6 +22,9 @@ const start = async (customer) => {
 
   for (let projectDir of projectDirs) {
     const projectName = path.basename(projectDir);
+    const deviceTable = await getDeviceTable(
+      path.join(customerDir, projectName, "_device.name.csv")
+    );
 
     const deviceDirs = getDeviceDirs(projectDir);
 
@@ -36,8 +40,9 @@ const start = async (customer) => {
         logger.info(`Start processing file ${csvFile}`);
         let measures;
         let error = false;
+
         try {
-          measures = await buildMeasures(csvFile);
+          measures = await buildMeasures(csvFile, deviceTable);
           try {
             await saveMeasures(customer, projectName, measures);
             logger.info(`Success processing ${csvFile}`);
