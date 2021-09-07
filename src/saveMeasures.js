@@ -25,7 +25,6 @@ async function saveMeasures(customer, projectName, measures) {
         .tag("usage", measure["usage"])
         .tag("nature", measure["nature"])
         //see https://github.com/Augustin82/omegawatt/issues/2
-        .tag("measured_value", measure["measured_value"])
         .tag("unit", measure["unit"])
         .tag("project", projectName)
         .floatField("value", value);
