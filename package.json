@@ -9,8 +9,9 @@
   "license": "MIT",
   "scripts": {
     "compose": "docker-compose up --build",
-    "lint": "eslint_d --fix '**/*.js'",
     "start": "node src/index.js",
+    "lint": "prettier --check --plugin-search-dir=. src && eslint_d --fix **/*.js",
+    "format": "prettier --write --plugin-search-dir=. src",
     "test": "mocha test/**/*.js --ui bdd --reporter spec --colors --watch --watch-files 'test/' 'src/'"
   },
   "dependencies": {

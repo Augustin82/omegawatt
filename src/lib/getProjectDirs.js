@@ -8,7 +8,7 @@ function getProjectDirs(dir) {
   const files = fs.readdirSync(dir);
   const dirs = [];
   files.forEach(function (file) {
-    if(file !== "_done" && file !== "_error"){
+    if (file !== "_done" && file !== "_error") {
       const filepath = `${dir}${file}`;
       if (fs.statSync(filepath).isDirectory()) {
         dirs.push(filepath);
