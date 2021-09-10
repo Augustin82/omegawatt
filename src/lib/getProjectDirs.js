@@ -1,21 +1,27 @@
 const fs = require("fs");
 
-function getProjectDirs(dir) {
-  if (dir[dir.length - 1] !== "/") {
-    dir = dir.concat("/");
+function addTrailingSlashIfNeeded(directory) {
+  if (directory[directory.length - 1] !== "/") {
+    directory = directory.concat("/");
   }
-
-  const files = fs.readdirSync(dir);
-  const dirs = [];
-  files.forEach(function (file) {
-    if (file !== "_done" && file !== "_error") {
-      const filepath = `${dir}${file}`;
-      if (fs.statSync(filepath).isDirectory()) {
-        dirs.push(filepath);
-      }
-    }
-  });
-  return dirs;
+  return directory;
 }
 
-module.exports = { getProjectDirs };
+function getSubDirs(customerDir) {
+  customerDir = addTrailingSlashIfNeeded(customerDir);
+
+  const files = fs.readdirSync(customerDir);
+  const projectDirs = [];
+  files.forEach(function (file) {
+    const projectDir = `${customerDir}${file}`;
+    if (!projectDir.startsWith("_") && fs.statSync(projectDir).isDirectory()) {
+      projectDirs.push(projectDir);
+    }
+  });
+  return projectDirs;
+}
+
+const getProjectDirs = getSubDirs;
+const getDeviceDirs = getSubDirs;
+
+module.exports = { getProjectDirs, getDeviceDirs };

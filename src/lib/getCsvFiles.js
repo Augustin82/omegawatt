@@ -9,10 +9,12 @@ function walkSync(dir, filelist) {
   filelist = filelist || [];
   files.forEach(function (file) {
     const filepath = `${dir}${file}`;
-    if (!file.startsWith("_") && fs.statSync(filepath).isDirectory()) {
-      filelist = walkSync(`${filepath}/`, filelist);
-    } else {
-      filelist.push(filepath);
+    if (!file.startsWith("_")) {
+      if (fs.statSync(filepath).isDirectory()) {
+        filelist = walkSync(`${filepath}/`, filelist);
+      } else {
+        filelist.push(filepath);
+      }
     }
   });
   return filelist;
