@@ -1,18 +1,11 @@
 const { Point } = require("@influxdata/influxdb-client");
-const { InfluxDB } = require("@influxdata/influxdb-client");
 const { isInt, logger } = require("./lib");
+const { createWriteApi } = require("./influx/index");
 
 async function saveMeasures(customer, projectName, measures) {
-  const { INFLUXDB_ADMIN_TOKEN, INFLUXDB_URL, INFLUXDB_ORG } = process.env;
-
   const { bucket } = customer;
 
-  const client = new InfluxDB({
-    url: INFLUXDB_URL || "",
-    token: INFLUXDB_ADMIN_TOKEN,
-  });
-
-  const writeApi = client.getWriteApi(INFLUXDB_ORG || "", bucket);
+  const writeApi = createWriteApi(bucket);
 
   let points = [];
   for (let measure of measures) {
