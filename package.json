@@ -12,7 +12,7 @@
     "start": "node src/index.js",
     "lint": "prettier --check --plugin-search-dir=. src && eslint_d --fix **/*.js",
     "format": "prettier --write --plugin-search-dir=. src",
-    "test": "mocha test/**/*.js --ui bdd --reporter spec --colors --watch --watch-files 'test/' 'src/'"
+    "test": "mocha test/**/*.js --ui bdd --reporter spec --colors --watch --watch-files 'test/','src/'"
   },
   "dependencies": {
     "@influxdata/influxdb-client": "^1.14.0",
