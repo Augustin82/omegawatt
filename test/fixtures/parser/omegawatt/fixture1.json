@@ -3,7 +3,7 @@
     "measured_at": "2021-07-03T20:30:00.000Z",
     "sn": "02000012",
     "channel": "Ph1",
-    "device_name": "todo",
+    "device_name": "02000012_Ph1",
     "unit": "V",
     "measured_value": "V",
     "value": "240.75"
@@ -12,7 +12,7 @@
     "measured_at": "2021-07-03T20:30:00.000Z",
     "sn": "02000012",
     "channel": "Ph2",
-    "device_name": "todo",
+    "device_name": "02000012_Ph2",
     "unit": "V",
     "measured_value": "V",
     "value": "234.46"
@@ -21,7 +21,7 @@
     "measured_at": "2021-07-03T20:30:00.000Z",
     "sn": "02000012",
     "channel": "Ph3",
-    "device_name": "todo",
+    "device_name": "02000012_Ph3",
     "unit": "V",
     "measured_value": "V",
     "value": "227.73"
@@ -30,7 +30,7 @@
     "measured_at": "2021-07-03T20:30:00.000Z",
     "sn": "02000012",
     "channel": "Voie1",
-    "device_name": "todo",
+    "device_name": "02000012_Voie1",
     "unit": "W",
     "measured_value": "W",
     "value": "20"
@@ -39,7 +39,7 @@
     "measured_at": "2021-07-03T20:30:00.000Z",
     "sn": "02000012",
     "channel": "Voie1",
-    "device_name": "todo",
+    "device_name": "02000012_Voie1",
     "unit": "Var",
     "measured_value": "Var",
     "value": "-64"
@@ -48,7 +48,7 @@
     "measured_at": "2021-07-03T20:30:00.000Z",
     "sn": "02000012",
     "channel": "Voie2",
-    "device_name": "todo",
+    "device_name": "02000012_Voie2",
     "unit": "W",
     "measured_value": "W",
     "value": "4"
@@ -57,7 +57,7 @@
     "measured_at": "2021-07-03T20:30:00.000Z",
     "sn": "02000012",
     "channel": "Voie2",
-    "device_name": "todo",
+    "device_name": "02000012_Voie2",
     "unit": "Var",
     "measured_value": "Var",
     "value": "-9"
@@ -66,7 +66,7 @@
     "measured_at": "2021-07-03T20:30:00.000Z",
     "sn": "02000012",
     "channel": "Voie3",
-    "device_name": "todo",
+    "device_name": "02000012_Voie3",
     "unit": "W",
     "measured_value": "W",
     "value": "12"
@@ -75,7 +75,7 @@
     "measured_at": "2021-07-03T20:30:00.000Z",
     "sn": "02000012",
     "channel": "Voie3",
-    "device_name": "todo",
+    "device_name": "02000012_Voie3",
     "unit": "Var",
     "measured_value": "Var",
     "value": "-64"
@@ -84,7 +84,7 @@
     "measured_at": "2021-07-03T20:30:00.000Z",
     "sn": "02000012",
     "channel": "Voie4",
-    "device_name": "todo",
+    "device_name": "02000012_Voie4",
     "unit": "W",
     "measured_value": "W",
     "value": "0"
@@ -93,7 +93,7 @@
     "measured_at": "2021-07-03T20:30:00.000Z",
     "sn": "02000012",
     "channel": "Voie4",
-    "device_name": "todo",
+    "device_name": "02000012_Voie4",
     "unit": "Var",
     "measured_value": "Var",
     "value": "0"
@@ -102,7 +102,7 @@
     "measured_at": "2021-07-03T20:30:00.000Z",
     "sn": "02000012",
     "channel": "Voie5",
-    "device_name": "todo",
+    "device_name": "02000012_Voie5",
     "unit": "W",
     "measured_value": "W",
     "value": "0"
@@ -111,7 +111,7 @@
     "measured_at": "2021-07-03T20:30:00.000Z",
     "sn": "02000012",
     "channel": "Voie5",
-    "device_name": "todo",
+    "device_name": "02000012_Voie5",
     "unit": "Var",
     "measured_value": "Var",
     "value": "0"
@@ -120,7 +120,7 @@
     "measured_at": "2021-07-03T20:30:00.000Z",
     "sn": "02000012",
     "channel": "Voie6",
-    "device_name": "todo",
+    "device_name": "02000012_Voie6",
     "unit": "W",
     "measured_value": "W",
     "value": "0"
@@ -129,7 +129,7 @@
     "measured_at": "2021-07-03T20:30:00.000Z",
     "sn": "02000012",
     "channel": "Voie1",
-    "device_name": "todo",
+    "device_name": "02000012_Voie1",
     "unit": "Var",
     "measured_value": "Var",
     "value": "0"
@@ -138,7 +138,7 @@
     "measured_at": "2021-07-03T20:30:00.000Z",
     "sn": "04000002",
     "channel": "Voie1",
-    "device_name": "todo",
+    "device_name": "04000002_Voie1",
     "unit": "W",
     "measured_value": "W",
     "value": "26"
@@ -147,7 +147,7 @@
     "measured_at": "2021-07-03T20:30:00.000Z",
     "sn": "04000002",
     "channel": "Voie1",
-    "device_name": "todo",
+    "device_name": "04000002_Voie1",
     "unit": "Var",
     "measured_value": "Var",
     "value": "-64"
@@ -156,7 +156,7 @@
     "measured_at": "2021-07-03T20:30:00.000Z",
     "sn": "04000002",
     "channel": "Voie2",
-    "device_name": "todo",
+    "device_name": "04000002_Voie2",
     "unit": "W",
     "measured_value": "W",
     "value": "8"
@@ -165,7 +165,7 @@
     "measured_at": "2021-07-03T20:30:00.000Z",
     "sn": "04000002",
     "channel": "Voie2",
-    "device_name": "todo",
+    "device_name": "04000002_Voie2",
     "unit": "Var",
     "measured_value": "Var",
     "value": "-10"
@@ -174,16 +174,16 @@
     "measured_at": "2021-07-03T20:30:00.000Z",
     "sn": "04000002",
     "channel": "Voie3",
-    "device_name": "todo",
+    "device_name": "04000002_Voie3",
     "unit": "W",
     "measured_value": "W",
-    "value": "-0"
+    "value": "0"
   },
   {
     "measured_at": "2021-07-03T20:30:00.000Z",
     "sn": "04000002",
     "channel": "Voie3",
-    "device_name": "todo",
+    "device_name": "04000002_Voie3",
     "unit": "Var",
     "measured_value": "Var",
     "value": "-27"
@@ -192,7 +192,7 @@
     "measured_at": "2021-07-03T20:30:00.000Z",
     "sn": "04000002",
     "channel": "Voie4",
-    "device_name": "todo",
+    "device_name": "04000002_Voie4",
     "unit": "W",
     "measured_value": "W",
     "value": "0"
@@ -201,7 +201,7 @@
     "measured_at": "2021-07-03T20:30:00.000Z",
     "sn": "04000002",
     "channel": "Voie4",
-    "device_name": "todo",
+    "device_name": "04000002_Voie4",
     "unit": "Var",
     "measured_value": "Var",
     "value": "0"
@@ -210,7 +210,7 @@
     "measured_at": "2021-07-03T20:30:00.000Z",
     "sn": "04000002",
     "channel": "Voie5",
-    "device_name": "todo",
+    "device_name": "04000002_Voie5",
     "unit": "W",
     "measured_value": "W",
     "value": "0"
@@ -219,7 +219,7 @@
     "measured_at": "2021-07-03T20:30:00.000Z",
     "sn": "04000002",
     "channel": "Voie5",
-    "device_name": "todo",
+    "device_name": "04000002_Voie5",
     "unit": "Var",
     "measured_value": "Var",
     "value": "0"
@@ -228,25 +228,25 @@
     "measured_at": "2021-07-03T20:30:00.000Z",
     "sn": "04000002",
     "channel": "Voie6",
-    "device_name": "todo",
+    "device_name": "04000002_Voie6",
     "unit": "W",
     "measured_value": "W",
-    "value": "-0"
+    "value": "0"
   },
   {
     "measured_at": "2021-07-03T20:30:00.000Z",
     "sn": "04000002",
     "channel": "Voie1",
-    "device_name": "todo",
+    "device_name": "04000002_Voie1",
     "unit": "Var",
     "measured_value": "Var",
-    "value": "-0"
+    "value": "0"
   },
   {
     "measured_at": "2021-07-03T20:30:00.000Z",
     "sn": "04000004",
     "channel": "Voie1",
-    "device_name": "todo",
+    "device_name": "04000004_Voie1",
     "unit": "W",
     "measured_value": "W",
     "value": "4"
@@ -255,7 +255,7 @@
     "measured_at": "2021-07-03T20:30:00.000Z",
     "sn": "04000004",
     "channel": "Voie1",
-    "device_name": "todo",
+    "device_name": "04000004_Voie1",
     "unit": "Var",
     "measured_value": "Var",
     "value": "16"
@@ -264,7 +264,7 @@
     "measured_at": "2021-07-03T20:30:00.000Z",
     "sn": "04000004",
     "channel": "Voie2",
-    "device_name": "todo",
+    "device_name": "04000004_Voie2",
     "unit": "W",
     "measured_value": "W",
     "value": "0"
@@ -273,7 +273,7 @@
     "measured_at": "2021-07-03T20:30:00.000Z",
     "sn": "04000004",
     "channel": "Voie2",
-    "device_name": "todo",
+    "device_name": "04000004_Voie2",
     "unit": "Var",
     "measured_value": "Var",
     "value": "0"
@@ -282,7 +282,7 @@
     "measured_at": "2021-07-03T20:30:00.000Z",
     "sn": "04000004",
     "channel": "Voie3",
-    "device_name": "todo",
+    "device_name": "04000004_Voie3",
     "unit": "W",
     "measured_value": "W",
     "value": "0"
@@ -291,25 +291,25 @@
     "measured_at": "2021-07-03T20:30:00.000Z",
     "sn": "04000004",
     "channel": "Voie3",
-    "device_name": "todo",
+    "device_name": "04000004_Voie3",
     "unit": "Var",
     "measured_value": "Var",
-    "value": "-0"
+    "value": "0"
   },
   {
     "measured_at": "2021-07-03T20:30:00.000Z",
     "sn": "04000004",
     "channel": "Voie4",
-    "device_name": "todo",
+    "device_name": "04000004_Voie4",
     "unit": "W",
     "measured_value": "W",
-    "value": "-0"
+    "value": "0"
   },
   {
     "measured_at": "2021-07-03T20:30:00.000Z",
     "sn": "04000004",
     "channel": "Voie4",
-    "device_name": "todo",
+    "device_name": "04000004_Voie4",
     "unit": "Var",
     "measured_value": "Var",
     "value": "0"
@@ -318,7 +318,7 @@
     "measured_at": "2021-07-03T20:30:00.000Z",
     "sn": "04000004",
     "channel": "Voie5",
-    "device_name": "todo",
+    "device_name": "04000004_Voie5",
     "unit": "W",
     "measured_value": "W",
     "value": "0"
@@ -327,7 +327,7 @@
     "measured_at": "2021-07-03T20:30:00.000Z",
     "sn": "04000004",
     "channel": "Voie5",
-    "device_name": "todo",
+    "device_name": "04000004_Voie5",
     "unit": "Var",
     "measured_value": "Var",
     "value": "0"
@@ -336,7 +336,7 @@
     "measured_at": "2021-07-03T20:30:00.000Z",
     "sn": "04000004",
     "channel": "Voie6",
-    "device_name": "todo",
+    "device_name": "04000004_Voie6",
     "unit": "W",
     "measured_value": "W",
     "value": "0"
@@ -345,16 +345,16 @@
     "measured_at": "2021-07-03T20:30:00.000Z",
     "sn": "04000004",
     "channel": "Voie1",
-    "device_name": "todo",
+    "device_name": "04000004_Voie1",
     "unit": "Var",
     "measured_value": "Var",
-    "value": "-0"
+    "value": "0"
   },
   {
     "measured_at": "2021-07-03T20:40:00.000Z",
     "sn": "02000012",
     "channel": "Ph1",
-    "device_name": "todo",
+    "device_name": "02000012_Ph1",
     "unit": "V",
     "measured_value": "V",
     "value": "241.01"
@@ -363,7 +363,7 @@
     "measured_at": "2021-07-03T20:40:00.000Z",
     "sn": "02000012",
     "channel": "Ph2",
-    "device_name": "todo",
+    "device_name": "02000012_Ph2",
     "unit": "V",
     "measured_value": "V",
     "value": "235.07"
@@ -372,7 +372,7 @@
     "measured_at": "2021-07-03T20:40:00.000Z",
     "sn": "02000012",
     "channel": "Ph3",
-    "device_name": "todo",
+    "device_name": "02000012_Ph3",
     "unit": "V",
     "measured_value": "V",
     "value": "227.17"
@@ -381,7 +381,7 @@
     "measured_at": "2021-07-03T20:40:00.000Z",
     "sn": "02000012",
     "channel": "Voie1",
-    "device_name": "todo",
+    "device_name": "02000012_Voie1",
     "unit": "W",
     "measured_value": "W",
     "value": "20"
@@ -390,7 +390,7 @@
     "measured_at": "2021-07-03T20:40:00.000Z",
     "sn": "02000012",
     "channel": "Voie1",
-    "device_name": "todo",
+    "device_name": "02000012_Voie1",
     "unit": "Var",
     "measured_value": "Var",
     "value": "-64"
@@ -399,7 +399,7 @@
     "measured_at": "2021-07-03T20:40:00.000Z",
     "sn": "02000012",
     "channel": "Voie2",
-    "device_name": "todo",
+    "device_name": "02000012_Voie2",
     "unit": "W",
     "measured_value": "W",
     "value": "4"
@@ -408,7 +408,7 @@
     "measured_at": "2021-07-03T20:40:00.000Z",
     "sn": "02000012",
     "channel": "Voie2",
-    "device_name": "todo",
+    "device_name": "02000012_Voie2",
     "unit": "Var",
     "measured_value": "Var",
     "value": "-9"
@@ -417,7 +417,7 @@
     "measured_at": "2021-07-03T20:40:00.000Z",
     "sn": "02000012",
     "channel": "Voie3",
-    "device_name": "todo",
+    "device_name": "02000012_Voie3",
     "unit": "W",
     "measured_value": "W",
     "value": "12"
@@ -426,7 +426,7 @@
     "measured_at": "2021-07-03T20:40:00.000Z",
     "sn": "02000012",
     "channel": "Voie3",
-    "device_name": "todo",
+    "device_name": "02000012_Voie3",
     "unit": "Var",
     "measured_value": "Var",
     "value": "-65"
@@ -435,7 +435,7 @@
     "measured_at": "2021-07-03T20:40:00.000Z",
     "sn": "02000012",
     "channel": "Voie4",
-    "device_name": "todo",
+    "device_name": "02000012_Voie4",
     "unit": "W",
     "measured_value": "W",
     "value": "0"
@@ -444,7 +444,7 @@
     "measured_at": "2021-07-03T20:40:00.000Z",
     "sn": "02000012",
     "channel": "Voie4",
-    "device_name": "todo",
+    "device_name": "02000012_Voie4",
     "unit": "Var",
     "measured_value": "Var",
     "value": "0"
@@ -453,7 +453,7 @@
     "measured_at": "2021-07-03T20:40:00.000Z",
     "sn": "02000012",
     "channel": "Voie5",
-    "device_name": "todo",
+    "device_name": "02000012_Voie5",
     "unit": "W",
     "measured_value": "W",
     "value": "0"
@@ -462,7 +462,7 @@
     "measured_at": "2021-07-03T20:40:00.000Z",
     "sn": "02000012",
     "channel": "Voie5",
-    "device_name": "todo",
+    "device_name": "02000012_Voie5",
     "unit": "Var",
     "measured_value": "Var",
     "value": "0"
@@ -471,7 +471,7 @@
     "measured_at": "2021-07-03T20:40:00.000Z",
     "sn": "02000012",
     "channel": "Voie6",
-    "device_name": "todo",
+    "device_name": "02000012_Voie6",
     "unit": "W",
     "measured_value": "W",
     "value": "0"
@@ -480,7 +480,7 @@
     "measured_at": "2021-07-03T20:40:00.000Z",
     "sn": "02000012",
     "channel": "Voie1",
-    "device_name": "todo",
+    "device_name": "02000012_Voie1",
     "unit": "Var",
     "measured_value": "Var",
     "value": "0"
@@ -489,7 +489,7 @@
     "measured_at": "2021-07-03T20:40:00.000Z",
     "sn": "04000002",
     "channel": "Voie1",
-    "device_name": "todo",
+    "device_name": "04000002_Voie1",
     "unit": "W",
     "measured_value": "W",
     "value": "26"
@@ -498,7 +498,7 @@
     "measured_at": "2021-07-03T20:40:00.000Z",
     "sn": "04000002",
     "channel": "Voie1",
-    "device_name": "todo",
+    "device_name": "04000002_Voie1",
     "unit": "Var",
     "measured_value": "Var",
     "value": "-64"
@@ -507,7 +507,7 @@
     "measured_at": "2021-07-03T20:40:00.000Z",
     "sn": "04000002",
     "channel": "Voie2",
-    "device_name": "todo",
+    "device_name": "04000002_Voie2",
     "unit": "W",
     "measured_value": "W",
     "value": "8"
@@ -516,7 +516,7 @@
     "measured_at": "2021-07-03T20:40:00.000Z",
     "sn": "04000002",
     "channel": "Voie2",
-    "device_name": "todo",
+    "device_name": "04000002_Voie2",
     "unit": "Var",
     "measured_value": "Var",
     "value": "-10"
@@ -525,16 +525,16 @@
     "measured_at": "2021-07-03T20:40:00.000Z",
     "sn": "04000002",
     "channel": "Voie3",
-    "device_name": "todo",
+    "device_name": "04000002_Voie3",
     "unit": "W",
     "measured_value": "W",
-    "value": "-0"
+    "value": "0"
   },
   {
     "measured_at": "2021-07-03T20:40:00.000Z",
     "sn": "04000002",
     "channel": "Voie3",
-    "device_name": "todo",
+    "device_name": "04000002_Voie3",
     "unit": "Var",
     "measured_value": "Var",
     "value": "-27"
@@ -543,7 +543,7 @@
     "measured_at": "2021-07-03T20:40:00.000Z",
     "sn": "04000002",
     "channel": "Voie4",
-    "device_name": "todo",
+    "device_name": "04000002_Voie4",
     "unit": "W",
     "measured_value": "W",
     "value": "0"
@@ -552,7 +552,7 @@
     "measured_at": "2021-07-03T20:40:00.000Z",
     "sn": "04000002",
     "channel": "Voie4",
-    "device_name": "todo",
+    "device_name": "04000002_Voie4",
     "unit": "Var",
     "measured_value": "Var",
     "value": "0"
@@ -561,7 +561,7 @@
     "measured_at": "2021-07-03T20:40:00.000Z",
     "sn": "04000002",
     "channel": "Voie5",
-    "device_name": "todo",
+    "device_name": "04000002_Voie5",
     "unit": "W",
     "measured_value": "W",
     "value": "0"
@@ -570,7 +570,7 @@
     "measured_at": "2021-07-03T20:40:00.000Z",
     "sn": "04000002",
     "channel": "Voie5",
-    "device_name": "todo",
+    "device_name": "04000002_Voie5",
     "unit": "Var",
     "measured_value": "Var",
     "value": "0"
@@ -579,25 +579,25 @@
     "measured_at": "2021-07-03T20:40:00.000Z",
     "sn": "04000002",
     "channel": "Voie6",
-    "device_name": "todo",
+    "device_name": "04000002_Voie6",
     "unit": "W",
     "measured_value": "W",
-    "value": "-0"
+    "value": "0"
   },
   {
     "measured_at": "2021-07-03T20:40:00.000Z",
     "sn": "04000002",
     "channel": "Voie1",
-    "device_name": "todo",
+    "device_name": "04000002_Voie1",
     "unit": "Var",
     "measured_value": "Var",
-    "value": "-0"
+    "value": "0"
   },
   {
     "measured_at": "2021-07-03T20:40:00.000Z",
     "sn": "04000004",
     "channel": "Voie1",
-    "device_name": "todo",
+    "device_name": "04000004_Voie1",
     "unit": "W",
     "measured_value": "W",
     "value": "4"
@@ -606,7 +606,7 @@
     "measured_at": "2021-07-03T20:40:00.000Z",
     "sn": "04000004",
     "channel": "Voie1",
-    "device_name": "todo",
+    "device_name": "04000004_Voie1",
     "unit": "Var",
     "measured_value": "Var",
     "value": "16"
@@ -615,7 +615,7 @@
     "measured_at": "2021-07-03T20:40:00.000Z",
     "sn": "04000004",
     "channel": "Voie2",
-    "device_name": "todo",
+    "device_name": "04000004_Voie2",
     "unit": "W",
     "measured_value": "W",
     "value": "0"
@@ -624,7 +624,7 @@
     "measured_at": "2021-07-03T20:40:00.000Z",
     "sn": "04000004",
     "channel": "Voie2",
-    "device_name": "todo",
+    "device_name": "04000004_Voie2",
     "unit": "Var",
     "measured_value": "Var",
     "value": "0"
@@ -633,7 +633,7 @@
     "measured_at": "2021-07-03T20:40:00.000Z",
     "sn": "04000004",
     "channel": "Voie3",
-    "device_name": "todo",
+    "device_name": "04000004_Voie3",
     "unit": "W",
     "measured_value": "W",
     "value": "0"
@@ -642,25 +642,25 @@
     "measured_at": "2021-07-03T20:40:00.000Z",
     "sn": "04000004",
     "channel": "Voie3",
-    "device_name": "todo",
+    "device_name": "04000004_Voie3",
     "unit": "Var",
     "measured_value": "Var",
-    "value": "-0"
+    "value": "0"
   },
   {
     "measured_at": "2021-07-03T20:40:00.000Z",
     "sn": "04000004",
     "channel": "Voie4",
-    "device_name": "todo",
+    "device_name": "04000004_Voie4",
     "unit": "W",
     "measured_value": "W",
-    "value": "-0"
+    "value": "0"
   },
   {
     "measured_at": "2021-07-03T20:40:00.000Z",
     "sn": "04000004",
     "channel": "Voie4",
-    "device_name": "todo",
+    "device_name": "04000004_Voie4",
     "unit": "Var",
     "measured_value": "Var",
     "value": "0"
@@ -669,7 +669,7 @@
     "measured_at": "2021-07-03T20:40:00.000Z",
     "sn": "04000004",
     "channel": "Voie5",
-    "device_name": "todo",
+    "device_name": "04000004_Voie5",
     "unit": "W",
     "measured_value": "W",
     "value": "0"
@@ -678,7 +678,7 @@
     "measured_at": "2021-07-03T20:40:00.000Z",
     "sn": "04000004",
     "channel": "Voie5",
-    "device_name": "todo",
+    "device_name": "04000004_Voie5",
     "unit": "Var",
     "measured_value": "Var",
     "value": "0"
@@ -687,19 +687,19 @@
     "measured_at": "2021-07-03T20:40:00.000Z",
     "sn": "04000004",
     "channel": "Voie6",
-    "device_name": "todo",
+    "device_name": "04000004_Voie6",
     "unit": "W",
     "measured_value": "W",
-    "value": "-0"
+    "value": "0"
   },
   {
     "measured_at": "2021-07-03T20:40:00.000Z",
     "sn": "04000004",
     "channel": "Voie1",
-    "device_name": "todo",
+    "device_name": "04000004_Voie1",
     "unit": "Var",
     "measured_value": "Var",
-    "value": "-0"
+    "value": "0"
   }
 ]
 

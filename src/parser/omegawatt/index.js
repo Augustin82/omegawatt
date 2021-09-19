@@ -126,7 +126,7 @@ const rowToMeasures = (metadata, deviceTable) => (row) => {
       unit = "V"; // "V"
     } else {
       const columnForDevice = (offset - voltageOffset + 1) % 12;
-      const voieNumber = ~~((columnForDevice - 1) / 2) + 1;
+      voieNumber = ~~((columnForDevice - 1) / 2) + 1;
       channel = `Voie${voieNumber}`;
       unit = columnForDevice % 2 === 0 ? "Var" : "W"; // "Q" : "P"
     }
@@ -136,8 +136,8 @@ const rowToMeasures = (metadata, deviceTable) => (row) => {
       device_name,
       coeff,
       usage: _usage,
-    } = deviceTable(sn, `${voieNumber}`, measured_at);
-    const value = row[offset] * coeff;
+    } = deviceTable(sn, `${channel || ""}`, measured_at);
+    const value = `${row[offset] * coeff}`;
     const measure = {
       measured_at,
       sn,

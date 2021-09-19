@@ -1,0 +1,76 @@
+{
+  "02000015": {
+    "voie1": {
+      "2021-08-20T08:00:00.000Z": {
+        "coeff": "1",
+        "device_name": "Borne Charge",
+        "usage": "mobilité"
+      }
+    },
+    "voie2": {
+      "2021-08-20T08:00:00.000Z": {
+        "coeff": "1",
+        "device_name": "Borne Charge",
+        "usage": "mobilité"
+      }
+    },
+    "voie3": {
+      "2021-08-20T08:00:00.000Z": {
+        "coeff": "1",
+        "device_name": "Borne Charge",
+        "usage": "mobilité"
+      }
+    },
+    "ph1": {
+      "2021-08-20T08:00:00.000Z": {
+        "coeff": "1",
+        "device_name": "Séchoir",
+        "usage": "séchage"
+      }
+    },
+    "ph2": {
+      "2021-08-20T08:00:00.000Z": {
+        "coeff": "1",
+        "device_name": "Séchoir",
+        "usage": "séchage"
+      }
+    },
+    "ph3": {
+      "2021-08-20T08:00:00.000Z": {
+        "coeff": "1",
+        "device_name": "Séchoir",
+        "usage": "séchage"
+      }
+    }
+  },
+  "04000026": {
+    "voie1": {
+      "2021-08-20T08:00:00.000Z": {
+        "coeff": "1",
+        "device_name": "Gén séchoir",
+        "usage": "séchage"
+      }
+    },
+    "voie2": {
+      "2021-08-20T08:00:00.000Z": {
+        "coeff": "1",
+        "device_name": "Gén séchoir",
+        "usage": "séchage"
+      }
+    },
+    "voie3": {
+      "2021-08-20T08:00:00.000Z": {
+        "coeff": "1",
+        "device_name": "Gén séchoir",
+        "usage": "séchage"
+      }
+    },
+    "voie4": {
+      "2021-08-20T08:00:00.000Z": {
+        "coeff": "1",
+        "device_name": "Process séchoir",
+        "usage": "séchage"
+      }
+    }
+  }
+}

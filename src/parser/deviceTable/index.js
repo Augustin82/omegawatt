@@ -1,3 +1,4 @@
+const { DateTime } = require("luxon");
 const fs = require("fs");
 const parse = require("csv-parse/lib/sync");
 
@@ -15,7 +16,7 @@ const parseDeviceTable = async (filepath, delimiter = "\t") => {
 
     const csvOptions = {
       delimiter,
-      columns: false,
+      columns: true,
       skip_empty_lines: true,
     };
 
@@ -23,16 +24,21 @@ const parseDeviceTable = async (filepath, delimiter = "\t") => {
     const rows = parse(fileContent, csvOptions);
 
     for (const row of rows) {
-      // SN, Channel, Début, Device Name, Coeff, Usage
-      const { serial_number, channel, start, device_name, coeff, usage } = row;
-      if (!deviceTable[serial_number]) {
-        deviceTable[serial_number] = {};
+      // SN, Channel, Device Name, Début, Coeff, Usage
+      const { sn, channel, device_name, start_date, coeff, usage } = row;
+      const chan = `${channel}`.toLowerCase();
+      if (!deviceTable[sn]) {
+        deviceTable[sn] = {};
       }
-      if (!deviceTable[serial_number][channel]) {
-        deviceTable[serial_number][channel] = {};
+      if (!deviceTable[sn][chan]) {
+        deviceTable[sn][chan] = {};
       }
-      const isoDate = start || new Date(0).toISOString();
-      deviceTable[serial_number][channel][isoDate] = {
+      const isoDate = DateTime.fromFormat(start_date, "dd/MM/yy HH:mm:ss", {
+        zone: "Europe/Paris",
+      })
+        .toUTC()
+        .toISO();
+      deviceTable[sn][chan][isoDate] = {
         device_name,
         coeff,
         usage,
@@ -41,6 +47,7 @@ const parseDeviceTable = async (filepath, delimiter = "\t") => {
 
     return deviceTable;
   } catch (_e) {
+    console.log({ _e });
     return {};
   }
 };
@@ -55,13 +62,13 @@ const parseDeviceTable = async (filepath, delimiter = "\t") => {
  **/
 const getDeviceInfo = (deviceTable) => (serialNumber, channel, timestamp) => {
   if (deviceTable[serialNumber]) {
-    if (deviceTable[serialNumber][channel]) {
-      const periods = deviceTable[serialNumber][channel];
+    if (deviceTable[serialNumber][`${channel}`.toLowerCase()]) {
+      const periods = deviceTable[serialNumber][`${channel}`.toLowerCase()];
       const starts = Object.keys(periods).sort(function (a, b) {
         return new Date(b).getTime() - new Date(a).getTime();
       });
       for (let start of starts) {
-        if (new Date(timestamp).getTime() > new Date(start || 0).getTime()) {
+        if (new Date(timestamp).getTime() >= new Date(start || 0).getTime()) {
           const period = periods[start];
           return {
             device_name: period.device_name,
@@ -73,7 +80,7 @@ const getDeviceInfo = (deviceTable) => (serialNumber, channel, timestamp) => {
     }
   }
   return {
-    device_name: `${serialNumber}_${channel}`,
+    device_name: [serialNumber, channel].filter(Boolean).join("_"),
     coeff: 1,
     usage: "",
   };
@@ -86,5 +93,7 @@ const getDeviceTable = async (filepath, delimiter) => {
 };
 
 module.exports = {
+  parseDeviceTable,
+  getDeviceInfo,
   getDeviceTable,
 };
