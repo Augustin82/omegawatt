@@ -1,3 +1,4 @@
+const { DateTime } = require("luxon");
 const fs = require("fs");
 const parse = require("csv-parse/lib/sync");
 
@@ -91,56 +92,18 @@ const secondRowToFileType = (fileContent, delimiter) => {
 const timestampToDate = (timestamp) => {
   // timestamp format for omegawatt:
   // DD/MM/YY HH:mm:ss
+  // luxon equivalent:
+  // dd/MM/yy HH:mm:ss
 
   if (!timestamp) {
     return null;
   }
 
-  /** @type {string[]} */
-  const [date, time] = timestamp.trim().split(" ");
-
-  if (!date || !time) {
-    return null;
-  }
-
-  /** @type {number[]} */
-  const [day, month, year] = date.split("/").map((s) => parseInt(s, 10));
-
-  /** @type {number[]} */
-  const [hours, minutes, seconds] = time.split(":").map((s) => parseInt(s, 10));
-
-  if (
-    isNaN(year) ||
-    isNaN(month) ||
-    isNaN(day) ||
-    isNaN(hours) ||
-    isNaN(minutes) ||
-    isNaN(seconds)
-  ) {
-    return null;
-  }
-  const parsedDate = new Date(
-    2000 + year,
-    month - 1,
-    day,
-    hours,
-    minutes,
-    seconds
-  );
-
-  if (
-    parsedDate &&
-    parsedDate.getFullYear() === 2000 + year &&
-    parsedDate.getMonth() === month - 1 &&
-    parsedDate.getDate() === day &&
-    parsedDate.getHours() === hours &&
-    parsedDate.getMinutes() === minutes &&
-    parsedDate.getSeconds() === seconds
-  ) {
-    return parsedDate.toISOString();
-  }
-
-  return null;
+  return DateTime.fromFormat(timestamp, "dd/MM/yy HH:mm:ss", {
+    zone: "Europe/Paris",
+  })
+    .toUTC()
+    .toISO();
 };
 
 const rowToMeasures = (metadata) => (row) => {
