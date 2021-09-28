@@ -1,4 +1,5 @@
 var expect = require("chai").expect;
+const { DateTime } = require("luxon");
 var { parseOmegawatt, timestampToDate } = require("../../src/parser/omegawatt");
 var fs = require("fs");
 
@@ -16,6 +17,9 @@ describe("Omegawatt utils", () => {
   describe("timestamp validator", () => {
     it("can detect if a timestamp is valid or not", () => {
       const INVALID = null;
+      const validDate = DateTime.fromISO("2021-07-03T22:30:00", {
+        zone: "Europe/Paris",
+      });
       const fixtures = [
         ["", INVALID],
         ["blabla", INVALID],
@@ -26,7 +30,7 @@ describe("Omegawatt utils", () => {
         ["03/07/21 22 30 00", INVALID],
         ["33/07/21 22:30:00", INVALID],
         ["03/17/21 22:30:00", INVALID],
-        ["03/07/21 22:30:00", new Date(2021, 6, 3, 22, 30, 0, 0).toISOString()],
+        ["03/07/21 22:30:00", validDate.toUTC().toISO()],
       ];
 
       for (let i = 0; i < fixtures.length; i++) {
