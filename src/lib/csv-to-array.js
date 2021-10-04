@@ -1,4 +1,7 @@
 function CSVToArray(strData, strDelimiter) {
+  if (!strData) {
+    return [];
+  }
   // Check to see if the delimiter is defined. If not,
   // then default to comma.
   strDelimiter = strDelimiter || ",";
