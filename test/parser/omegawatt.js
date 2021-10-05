@@ -1,17 +1,29 @@
-var expect = require("chai").expect;
+const chai = require("chai");
+// chai.config.truncateThreshold = 0;
+let expect = chai.expect;
 const { DateTime } = require("luxon");
-var { parseOmegawatt, timestampToDate } = require("../../src/parser/omegawatt");
-var fs = require("fs");
+let { parseOmegawatt } = require("../../src/parser/omegawatt");
+let { getDeviceInfo } = require("../../src/parser/deviceTable");
+let fs = require("fs");
+const { parseOmegawattTime } = require("../../src/lib/dateHelpers");
 
-var empty = "./test/fixtures/parser/empty.csv";
-var junk = "./test/fixtures/parser/junk.csv";
-var fixture_bad_columns =
+let empty = "./test/fixtures/parser/empty.csv";
+let junk = "./test/fixtures/parser/junk.csv";
+let fixture_bad_columns =
   "./test/fixtures/parser/omegawatt/fixture_bad_columns.tsv";
-var fixture_bad_timestamp =
+let fixture_bad_timestamp =
   "./test/fixtures/parser/omegawatt/fixture_bad_timestamp.tsv";
-var fixture_bad_TX00 = "./test/fixtures/parser/omegawatt/fixture_bad_TX00.tsv";
-var fixture1 = "./test/fixtures/parser/omegawatt/fixture1.tsv";
-var fixture1_json = "./test/fixtures/parser/omegawatt/fixture1.json";
+let fixture_bad_TX00 = "./test/fixtures/parser/omegawatt/fixture_bad_TX00.tsv";
+let fixture1 = "./test/fixtures/parser/omegawatt/fixture1.tsv";
+let fixture1_json = "./test/fixtures/parser/omegawatt/fixture1.json";
+let fixture_full = "./test/fixtures/parser/omegawatt/fixture_full.tsv";
+let fixture_full_json = "./test/fixtures/parser/omegawatt/fixture_full.json";
+let deviceTable_json = "./test/fixtures/parser/omegawatt/deviceTable.json";
+
+let emptyDeviceTable = getDeviceInfo({});
+let fullDeviceTable = getDeviceInfo(
+  JSON.parse(fs.readFileSync(deviceTable_json).toString())
+);
 
 describe("Omegawatt utils", () => {
   describe("timestamp validator", () => {
@@ -35,7 +47,7 @@ describe("Omegawatt utils", () => {
 
       for (let i = 0; i < fixtures.length; i++) {
         const [timestamp, validity] = fixtures[i];
-        const isValid = timestampToDate(timestamp);
+        const isValid = parseOmegawattTime(timestamp);
         expect(
           isValid,
           `Timestamp '${timestamp}' should have validity ${validity} but has validity ${isValid}`
@@ -47,7 +59,7 @@ describe("Omegawatt utils", () => {
 
 describe("Omegawatt parser", () => {
   it("errors for empty files", () => {
-    return parseOmegawatt(empty)
+    return parseOmegawatt(empty, emptyDeviceTable)
       .then(() => {
         expect.fail("An empty file should cause the parser to throw!");
       })
@@ -59,7 +71,7 @@ describe("Omegawatt parser", () => {
   });
 
   it("errors for files that contain non-tsv text", async () => {
-    return parseOmegawatt(junk)
+    return parseOmegawatt(junk, emptyDeviceTable)
       .then(() => {
         expect.fail("A bad file should cause the parser to throw!");
       })
@@ -71,7 +83,7 @@ describe("Omegawatt parser", () => {
   });
 
   it("errors when there is the wrong amount of columns", async () => {
-    return parseOmegawatt(fixture_bad_columns)
+    return parseOmegawatt(fixture_bad_columns, emptyDeviceTable)
       .then(() => {
         expect.fail(
           "A bad number of columns should cause the parser to throw!"
@@ -83,7 +95,7 @@ describe("Omegawatt parser", () => {
   });
 
   it("errors when there is the wrong format of timestamp", async () => {
-    return parseOmegawatt(fixture_bad_timestamp)
+    return parseOmegawatt(fixture_bad_timestamp, emptyDeviceTable)
       .then(() => {
         expect.fail("A bad timestamp should cause the parser to throw!");
       })
@@ -93,7 +105,7 @@ describe("Omegawatt parser", () => {
   });
 
   it("errors when there is a bad TX00 format", async () => {
-    return parseOmegawatt(fixture_bad_TX00)
+    return parseOmegawatt(fixture_bad_TX00, emptyDeviceTable)
       .then(() => {
         expect.fail("A bad TX00 format should cause the parser to throw!");
       })
@@ -103,9 +115,8 @@ describe("Omegawatt parser", () => {
   });
 
   it("handles correct tsv files", async () => {
+    const result = await parseOmegawatt(fixture1, emptyDeviceTable);
     const expected = JSON.parse(fs.readFileSync(fixture1_json).toString());
-
-    const result = await parseOmegawatt(fixture1);
 
     expect(result).to.eql(expected);
   });
@@ -122,9 +133,19 @@ describe("Omegawatt parser", () => {
       ["T300_210716_020500.tsv", 7344],
     ];
     for (const [prodFile, length] of prodFiles) {
-      const result = await parseOmegawatt(`${prefix}/${prodFile}`);
+      const result = await parseOmegawatt(
+        `${prefix}/${prodFile}`,
+        emptyDeviceTable
+      );
 
       expect(result).to.have.length(length);
     }
+  });
+
+  it("handles a correct tsv file with a device table", async () => {
+    const result = await parseOmegawatt(fixture_full, fullDeviceTable);
+    const expected = JSON.parse(fs.readFileSync(fixture_full_json).toString());
+
+    expect(result).to.eql(expected);
   });
 });

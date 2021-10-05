@@ -1,6 +1,6 @@
-const { DateTime } = require("luxon");
 const fs = require("fs");
 const parse = require("csv-parse/lib/sync");
+const { parseOmegawattTime } = require("../../lib/dateHelpers.js");
 
 const { guessDelimiter } = require("../../lib");
 
@@ -89,56 +89,46 @@ const secondRowToFileType = (fileContent, delimiter) => {
   return fileType;
 };
 
-const timestampToDate = (timestamp) => {
-  // timestamp format for omegawatt:
-  // DD/MM/YY HH:mm:ss
-  // luxon equivalent:
-  // dd/MM/yy HH:mm:ss
-
-  if (!timestamp) {
-    return null;
-  }
-
-  return DateTime.fromFormat(timestamp, "dd/MM/yy HH:mm:ss", {
-    zone: "Europe/Paris",
-  })
-    .toUTC()
-    .toISO();
-};
-
-const rowToMeasures = (metadata) => (row) => {
+/** @param {DeviceTable} deviceTable **/
+const rowToMeasures = (metadata, deviceTable) => (row) => {
   const measures = [];
-  const measured_at = timestampToDate(row[0]);
+  const measured_at = parseOmegawattTime(row[0]);
   if (!measured_at) {
     throw Error("Incorrect timestamp format");
   }
-  const project = "project_name";
-  let nature, measured_value;
+  let channel, unit;
 
   let offset = 1;
 
   while (row[offset]) {
+    let voieNumber;
     if (offset < 1) {
       // nope
     } else if (offset > 0 && offset < 4) {
-      nature = `Ph${offset}`;
-      measured_value = "V";
+      channel = `Ph${offset}`;
+      unit = "V"; // "V"
     } else {
       const columnForDevice = (offset - voltageOffset + 1) % 12;
-      const voieNumber = ~~((columnForDevice - 1) / 2) + 1;
-      nature = `Voie${voieNumber}`;
-      measured_value = columnForDevice % 2 === 0 ? "Q" : "P";
+      voieNumber = ~~((columnForDevice - 1) / 2) + 1;
+      channel = `Voie${voieNumber}`;
+      unit = columnForDevice % 2 === 0 ? "Var" : "W"; // "Q" : "P"
     }
     const device_offset = ~~((offset - voltageOffset) / 12);
-    const device_name = metadata[device_offset];
-    const value = row[offset];
+    const sn = metadata[device_offset];
+    const {
+      device_name,
+      coeff,
+      usage: _usage,
+    } = deviceTable(sn, `${channel || ""}`, measured_at);
+    const value = `${row[offset] * coeff}`;
     const measure = {
       measured_at,
-      nature,
+      sn,
+      channel,
       device_name,
-      measured_value,
+      unit,
+      measured_value: unit,
       value,
-      project,
     };
     measures.push(measure);
     offset += 1;
@@ -147,8 +137,9 @@ const rowToMeasures = (metadata) => (row) => {
   return measures;
 };
 
-const otherRowsToMeasures = (fileContent, delimiter, metadata) => {
-  const toMeasures = rowToMeasures(metadata);
+/** @param {DeviceTable} deviceTable **/
+const otherRowsToMeasures = (fileContent, delimiter, deviceTable, metadata) => {
+  const toMeasures = rowToMeasures(metadata, deviceTable);
   const csvOptions = {
     delimiter,
     columns: false,
@@ -163,8 +154,11 @@ const otherRowsToMeasures = (fileContent, delimiter, metadata) => {
   return measures;
 };
 
-/** @type {(filepath: string, delimiter?: string) => Promise<Record<any, any>[]>} */
-const parseOmegawatt = async (filepath, delimiter = "\t") => {
+/** @typedef {{ device_name: string, coeff: number, usage: string }} DeviceInfo **/
+/** @typedef {(serialNumber: string, channel: string, timestamp: string) => DeviceInfo } DeviceTable **/
+
+/** @type {(filepath: string, deviceTable: DeviceTable, delimiter?: string) => Promise<Record<any, any>[]>} */
+const parseOmegawatt = async (filepath, deviceTable, delimiter = "\t") => {
   delimiter = delimiter || guessDelimiter(filepath);
 
   const fileContent = fs.readFileSync(filepath, {
@@ -176,12 +170,16 @@ const parseOmegawatt = async (filepath, delimiter = "\t") => {
 
   const metadata = firstRowToMetadata(fileContent, delimiter);
 
-  const measures = otherRowsToMeasures(fileContent, delimiter, metadata);
+  const measures = otherRowsToMeasures(
+    fileContent,
+    delimiter,
+    deviceTable,
+    metadata
+  );
 
   return measures;
 };
 
 module.exports = {
   parseOmegawatt,
-  timestampToDate,
 };
