@@ -9,17 +9,16 @@ async function saveMeasures(customer, projectName, measures) {
 
   let points = [];
   for (let measure of measures) {
-    const value = measure["value"];
+    const value = measure.value;
     if (isInt(value)) {
-      const point = new Point(measure["measured_value"])
+      const point = new Point(measure.measured_value)
         .timestamp(new Date(measure.measured_at))
-        //SN
-        .tag("device_name", measure["device_name"])
+        .tag("device_name", measure.device_name)
+        .tag("channel", measure.channel)
+        .tag("sn", measure.sn)
         .tag("usage", measure["usage"])
-        .tag("nature", measure["nature"])
-        //see https://github.com/Augustin82/omegawatt/issues/2
-        .tag("unit", measure["unit"])
         .tag("project", projectName)
+        .stringField("unit", measure.unit)
         .floatField("value", value);
       points.push(point);
     }

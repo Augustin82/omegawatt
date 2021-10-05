@@ -103,9 +103,8 @@ describe("Omegawatt parser", () => {
   });
 
   it("handles correct tsv files", async () => {
-    const expected = JSON.parse(fs.readFileSync(fixture1_json).toString());
-
     const result = await parseOmegawatt(fixture1);
+    const expected = JSON.parse(fs.readFileSync(fixture1_json).toString());
 
     expect(result).to.eql(expected);
   });

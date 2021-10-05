@@ -1,626 +1,705 @@
 [
   {
     "measured_at": "2021-07-03T20:30:00.000Z",
-    "nature": "Ph1",
-    "device_name": "02000012",
+    "sn": "02000012",
+    "channel": "Ph1",
+    "device_name": "todo",
+    "unit": "V",
     "measured_value": "V",
-    "value": "240.75",
-    "project": "project_name"
+    "value": "240.75"
   },
   {
     "measured_at": "2021-07-03T20:30:00.000Z",
-    "nature": "Ph2",
-    "device_name": "02000012",
+    "sn": "02000012",
+    "channel": "Ph2",
+    "device_name": "todo",
+    "unit": "V",
     "measured_value": "V",
-    "value": "234.46",
-    "project": "project_name"
+    "value": "234.46"
   },
   {
     "measured_at": "2021-07-03T20:30:00.000Z",
-    "nature": "Ph3",
-    "device_name": "02000012",
+    "sn": "02000012",
+    "channel": "Ph3",
+    "device_name": "todo",
+    "unit": "V",
     "measured_value": "V",
-    "value": "227.73",
-    "project": "project_name"
+    "value": "227.73"
   },
   {
     "measured_at": "2021-07-03T20:30:00.000Z",
-    "nature": "Voie1",
-    "device_name": "02000012",
-    "measured_value": "P",
-    "value": "20",
-    "project": "project_name"
+    "sn": "02000012",
+    "channel": "Voie1",
+    "device_name": "todo",
+    "unit": "W",
+    "measured_value": "W",
+    "value": "20"
   },
   {
     "measured_at": "2021-07-03T20:30:00.000Z",
-    "nature": "Voie1",
-    "device_name": "02000012",
-    "measured_value": "Q",
-    "value": "-64",
-    "project": "project_name"
+    "sn": "02000012",
+    "channel": "Voie1",
+    "device_name": "todo",
+    "unit": "Var",
+    "measured_value": "Var",
+    "value": "-64"
   },
   {
     "measured_at": "2021-07-03T20:30:00.000Z",
-    "nature": "Voie2",
-    "device_name": "02000012",
-    "measured_value": "P",
-    "value": "4",
-    "project": "project_name"
+    "sn": "02000012",
+    "channel": "Voie2",
+    "device_name": "todo",
+    "unit": "W",
+    "measured_value": "W",
+    "value": "4"
   },
   {
     "measured_at": "2021-07-03T20:30:00.000Z",
-    "nature": "Voie2",
-    "device_name": "02000012",
-    "measured_value": "Q",
-    "value": "-9",
-    "project": "project_name"
+    "sn": "02000012",
+    "channel": "Voie2",
+    "device_name": "todo",
+    "unit": "Var",
+    "measured_value": "Var",
+    "value": "-9"
   },
   {
     "measured_at": "2021-07-03T20:30:00.000Z",
-    "nature": "Voie3",
-    "device_name": "02000012",
-    "measured_value": "P",
-    "value": "12",
-    "project": "project_name"
+    "sn": "02000012",
+    "channel": "Voie3",
+    "device_name": "todo",
+    "unit": "W",
+    "measured_value": "W",
+    "value": "12"
   },
   {
     "measured_at": "2021-07-03T20:30:00.000Z",
-    "nature": "Voie3",
-    "device_name": "02000012",
-    "measured_value": "Q",
-    "value": "-64",
-    "project": "project_name"
+    "sn": "02000012",
+    "channel": "Voie3",
+    "device_name": "todo",
+    "unit": "Var",
+    "measured_value": "Var",
+    "value": "-64"
   },
   {
     "measured_at": "2021-07-03T20:30:00.000Z",
-    "nature": "Voie4",
-    "device_name": "02000012",
-    "measured_value": "P",
-    "value": "0",
-    "project": "project_name"
+    "sn": "02000012",
+    "channel": "Voie4",
+    "device_name": "todo",
+    "unit": "W",
+    "measured_value": "W",
+    "value": "0"
   },
   {
     "measured_at": "2021-07-03T20:30:00.000Z",
-    "nature": "Voie4",
-    "device_name": "02000012",
-    "measured_value": "Q",
-    "value": "0",
-    "project": "project_name"
+    "sn": "02000012",
+    "channel": "Voie4",
+    "device_name": "todo",
+    "unit": "Var",
+    "measured_value": "Var",
+    "value": "0"
   },
   {
     "measured_at": "2021-07-03T20:30:00.000Z",
-    "nature": "Voie5",
-    "device_name": "02000012",
-    "measured_value": "P",
-    "value": "0",
-    "project": "project_name"
+    "sn": "02000012",
+    "channel": "Voie5",
+    "device_name": "todo",
+    "unit": "W",
+    "measured_value": "W",
+    "value": "0"
   },
   {
     "measured_at": "2021-07-03T20:30:00.000Z",
-    "nature": "Voie5",
-    "device_name": "02000012",
-    "measured_value": "Q",
-    "value": "0",
-    "project": "project_name"
+    "sn": "02000012",
+    "channel": "Voie5",
+    "device_name": "todo",
+    "unit": "Var",
+    "measured_value": "Var",
+    "value": "0"
   },
   {
     "measured_at": "2021-07-03T20:30:00.000Z",
-    "nature": "Voie6",
-    "device_name": "02000012",
-    "measured_value": "P",
-    "value": "0",
-    "project": "project_name"
+    "sn": "02000012",
+    "channel": "Voie6",
+    "device_name": "todo",
+    "unit": "W",
+    "measured_value": "W",
+    "value": "0"
   },
   {
     "measured_at": "2021-07-03T20:30:00.000Z",
-    "nature": "Voie1",
-    "device_name": "02000012",
-    "measured_value": "Q",
-    "value": "0",
-    "project": "project_name"
+    "sn": "02000012",
+    "channel": "Voie1",
+    "device_name": "todo",
+    "unit": "Var",
+    "measured_value": "Var",
+    "value": "0"
   },
   {
     "measured_at": "2021-07-03T20:30:00.000Z",
-    "nature": "Voie1",
-    "device_name": "04000002",
-    "measured_value": "P",
-    "value": "26",
-    "project": "project_name"
+    "sn": "04000002",
+    "channel": "Voie1",
+    "device_name": "todo",
+    "unit": "W",
+    "measured_value": "W",
+    "value": "26"
   },
   {
     "measured_at": "2021-07-03T20:30:00.000Z",
-    "nature": "Voie1",
-    "device_name": "04000002",
-    "measured_value": "Q",
-    "value": "-64",
-    "project": "project_name"
+    "sn": "04000002",
+    "channel": "Voie1",
+    "device_name": "todo",
+    "unit": "Var",
+    "measured_value": "Var",
+    "value": "-64"
   },
   {
     "measured_at": "2021-07-03T20:30:00.000Z",
-    "nature": "Voie2",
-    "device_name": "04000002",
-    "measured_value": "P",
-    "value": "8",
-    "project": "project_name"
+    "sn": "04000002",
+    "channel": "Voie2",
+    "device_name": "todo",
+    "unit": "W",
+    "measured_value": "W",
+    "value": "8"
   },
   {
     "measured_at": "2021-07-03T20:30:00.000Z",
-    "nature": "Voie2",
-    "device_name": "04000002",
-    "measured_value": "Q",
-    "value": "-10",
-    "project": "project_name"
+    "sn": "04000002",
+    "channel": "Voie2",
+    "device_name": "todo",
+    "unit": "Var",
+    "measured_value": "Var",
+    "value": "-10"
   },
   {
     "measured_at": "2021-07-03T20:30:00.000Z",
-    "nature": "Voie3",
-    "device_name": "04000002",
-    "measured_value": "P",
-    "value": "-0",
-    "project": "project_name"
+    "sn": "04000002",
+    "channel": "Voie3",
+    "device_name": "todo",
+    "unit": "W",
+    "measured_value": "W",
+    "value": "-0"
   },
   {
     "measured_at": "2021-07-03T20:30:00.000Z",
-    "nature": "Voie3",
-    "device_name": "04000002",
-    "measured_value": "Q",
-    "value": "-27",
-    "project": "project_name"
+    "sn": "04000002",
+    "channel": "Voie3",
+    "device_name": "todo",
+    "unit": "Var",
+    "measured_value": "Var",
+    "value": "-27"
   },
   {
     "measured_at": "2021-07-03T20:30:00.000Z",
-    "nature": "Voie4",
-    "device_name": "04000002",
-    "measured_value": "P",
-    "value": "0",
-    "project": "project_name"
+    "sn": "04000002",
+    "channel": "Voie4",
+    "device_name": "todo",
+    "unit": "W",
+    "measured_value": "W",
+    "value": "0"
   },
   {
     "measured_at": "2021-07-03T20:30:00.000Z",
-    "nature": "Voie4",
-    "device_name": "04000002",
-    "measured_value": "Q",
-    "value": "0",
-    "project": "project_name"
+    "sn": "04000002",
+    "channel": "Voie4",
+    "device_name": "todo",
+    "unit": "Var",
+    "measured_value": "Var",
+    "value": "0"
   },
   {
     "measured_at": "2021-07-03T20:30:00.000Z",
-    "nature": "Voie5",
-    "device_name": "04000002",
-    "measured_value": "P",
-    "value": "0",
-    "project": "project_name"
+    "sn": "04000002",
+    "channel": "Voie5",
+    "device_name": "todo",
+    "unit": "W",
+    "measured_value": "W",
+    "value": "0"
   },
   {
     "measured_at": "2021-07-03T20:30:00.000Z",
-    "nature": "Voie5",
-    "device_name": "04000002",
-    "measured_value": "Q",
-    "value": "0",
-    "project": "project_name"
+    "sn": "04000002",
+    "channel": "Voie5",
+    "device_name": "todo",
+    "unit": "Var",
+    "measured_value": "Var",
+    "value": "0"
   },
   {
     "measured_at": "2021-07-03T20:30:00.000Z",
-    "nature": "Voie6",
-    "device_name": "04000002",
-    "measured_value": "P",
-    "value": "-0",
-    "project": "project_name"
+    "sn": "04000002",
+    "channel": "Voie6",
+    "device_name": "todo",
+    "unit": "W",
+    "measured_value": "W",
+    "value": "-0"
   },
   {
     "measured_at": "2021-07-03T20:30:00.000Z",
-    "nature": "Voie1",
-    "device_name": "04000002",
-    "measured_value": "Q",
-    "value": "-0",
-    "project": "project_name"
+    "sn": "04000002",
+    "channel": "Voie1",
+    "device_name": "todo",
+    "unit": "Var",
+    "measured_value": "Var",
+    "value": "-0"
   },
   {
     "measured_at": "2021-07-03T20:30:00.000Z",
-    "nature": "Voie1",
-    "device_name": "04000004",
-    "measured_value": "P",
-    "value": "4",
-    "project": "project_name"
+    "sn": "04000004",
+    "channel": "Voie1",
+    "device_name": "todo",
+    "unit": "W",
+    "measured_value": "W",
+    "value": "4"
   },
   {
     "measured_at": "2021-07-03T20:30:00.000Z",
-    "nature": "Voie1",
-    "device_name": "04000004",
-    "measured_value": "Q",
-    "value": "16",
-    "project": "project_name"
+    "sn": "04000004",
+    "channel": "Voie1",
+    "device_name": "todo",
+    "unit": "Var",
+    "measured_value": "Var",
+    "value": "16"
   },
   {
     "measured_at": "2021-07-03T20:30:00.000Z",
-    "nature": "Voie2",
-    "device_name": "04000004",
-    "measured_value": "P",
-    "value": "0",
-    "project": "project_name"
+    "sn": "04000004",
+    "channel": "Voie2",
+    "device_name": "todo",
+    "unit": "W",
+    "measured_value": "W",
+    "value": "0"
   },
   {
     "measured_at": "2021-07-03T20:30:00.000Z",
-    "nature": "Voie2",
-    "device_name": "04000004",
-    "measured_value": "Q",
-    "value": "0",
-    "project": "project_name"
+    "sn": "04000004",
+    "channel": "Voie2",
+    "device_name": "todo",
+    "unit": "Var",
+    "measured_value": "Var",
+    "value": "0"
   },
   {
     "measured_at": "2021-07-03T20:30:00.000Z",
-    "nature": "Voie3",
-    "device_name": "04000004",
-    "measured_value": "P",
-    "value": "0",
-    "project": "project_name"
+    "sn": "04000004",
+    "channel": "Voie3",
+    "device_name": "todo",
+    "unit": "W",
+    "measured_value": "W",
+    "value": "0"
   },
   {
     "measured_at": "2021-07-03T20:30:00.000Z",
-    "nature": "Voie3",
-    "device_name": "04000004",
-    "measured_value": "Q",
-    "value": "-0",
-    "project": "project_name"
+    "sn": "04000004",
+    "channel": "Voie3",
+    "device_name": "todo",
+    "unit": "Var",
+    "measured_value": "Var",
+    "value": "-0"
   },
   {
     "measured_at": "2021-07-03T20:30:00.000Z",
-    "nature": "Voie4",
-    "device_name": "04000004",
-    "measured_value": "P",
-    "value": "-0",
-    "project": "project_name"
+    "sn": "04000004",
+    "channel": "Voie4",
+    "device_name": "todo",
+    "unit": "W",
+    "measured_value": "W",
+    "value": "-0"
   },
   {
     "measured_at": "2021-07-03T20:30:00.000Z",
-    "nature": "Voie4",
-    "device_name": "04000004",
-    "measured_value": "Q",
-    "value": "0",
-    "project": "project_name"
+    "sn": "04000004",
+    "channel": "Voie4",
+    "device_name": "todo",
+    "unit": "Var",
+    "measured_value": "Var",
+    "value": "0"
   },
   {
     "measured_at": "2021-07-03T20:30:00.000Z",
-    "nature": "Voie5",
-    "device_name": "04000004",
-    "measured_value": "P",
-    "value": "0",
-    "project": "project_name"
+    "sn": "04000004",
+    "channel": "Voie5",
+    "device_name": "todo",
+    "unit": "W",
+    "measured_value": "W",
+    "value": "0"
   },
   {
     "measured_at": "2021-07-03T20:30:00.000Z",
-    "nature": "Voie5",
-    "device_name": "04000004",
-    "measured_value": "Q",
-    "value": "0",
-    "project": "project_name"
+    "sn": "04000004",
+    "channel": "Voie5",
+    "device_name": "todo",
+    "unit": "Var",
+    "measured_value": "Var",
+    "value": "0"
   },
   {
     "measured_at": "2021-07-03T20:30:00.000Z",
-    "nature": "Voie6",
-    "device_name": "04000004",
-    "measured_value": "P",
-    "value": "0",
-    "project": "project_name"
+    "sn": "04000004",
+    "channel": "Voie6",
+    "device_name": "todo",
+    "unit": "W",
+    "measured_value": "W",
+    "value": "0"
   },
   {
     "measured_at": "2021-07-03T20:30:00.000Z",
-    "nature": "Voie1",
-    "device_name": "04000004",
-    "measured_value": "Q",
-    "value": "-0",
-    "project": "project_name"
+    "sn": "04000004",
+    "channel": "Voie1",
+    "device_name": "todo",
+    "unit": "Var",
+    "measured_value": "Var",
+    "value": "-0"
   },
   {
     "measured_at": "2021-07-03T20:40:00.000Z",
-    "nature": "Ph1",
-    "device_name": "02000012",
+    "sn": "02000012",
+    "channel": "Ph1",
+    "device_name": "todo",
+    "unit": "V",
     "measured_value": "V",
-    "value": "241.01",
-    "project": "project_name"
+    "value": "241.01"
   },
   {
     "measured_at": "2021-07-03T20:40:00.000Z",
-    "nature": "Ph2",
-    "device_name": "02000012",
+    "sn": "02000012",
+    "channel": "Ph2",
+    "device_name": "todo",
+    "unit": "V",
     "measured_value": "V",
-    "value": "235.07",
-    "project": "project_name"
+    "value": "235.07"
   },
   {
     "measured_at": "2021-07-03T20:40:00.000Z",
-    "nature": "Ph3",
-    "device_name": "02000012",
+    "sn": "02000012",
+    "channel": "Ph3",
+    "device_name": "todo",
+    "unit": "V",
     "measured_value": "V",
-    "value": "227.17",
-    "project": "project_name"
+    "value": "227.17"
   },
   {
     "measured_at": "2021-07-03T20:40:00.000Z",
-    "nature": "Voie1",
-    "device_name": "02000012",
-    "measured_value": "P",
-    "value": "20",
-    "project": "project_name"
+    "sn": "02000012",
+    "channel": "Voie1",
+    "device_name": "todo",
+    "unit": "W",
+    "measured_value": "W",
+    "value": "20"
   },
   {
     "measured_at": "2021-07-03T20:40:00.000Z",
-    "nature": "Voie1",
-    "device_name": "02000012",
-    "measured_value": "Q",
-    "value": "-64",
-    "project": "project_name"
+    "sn": "02000012",
+    "channel": "Voie1",
+    "device_name": "todo",
+    "unit": "Var",
+    "measured_value": "Var",
+    "value": "-64"
   },
   {
     "measured_at": "2021-07-03T20:40:00.000Z",
-    "nature": "Voie2",
-    "device_name": "02000012",
-    "measured_value": "P",
-    "value": "4",
-    "project": "project_name"
+    "sn": "02000012",
+    "channel": "Voie2",
+    "device_name": "todo",
+    "unit": "W",
+    "measured_value": "W",
+    "value": "4"
   },
   {
     "measured_at": "2021-07-03T20:40:00.000Z",
-    "nature": "Voie2",
-    "device_name": "02000012",
-    "measured_value": "Q",
-    "value": "-9",
-    "project": "project_name"
+    "sn": "02000012",
+    "channel": "Voie2",
+    "device_name": "todo",
+    "unit": "Var",
+    "measured_value": "Var",
+    "value": "-9"
   },
   {
     "measured_at": "2021-07-03T20:40:00.000Z",
-    "nature": "Voie3",
-    "device_name": "02000012",
-    "measured_value": "P",
-    "value": "12",
-    "project": "project_name"
+    "sn": "02000012",
+    "channel": "Voie3",
+    "device_name": "todo",
+    "unit": "W",
+    "measured_value": "W",
+    "value": "12"
   },
   {
     "measured_at": "2021-07-03T20:40:00.000Z",
-    "nature": "Voie3",
-    "device_name": "02000012",
-    "measured_value": "Q",
-    "value": "-65",
-    "project": "project_name"
+    "sn": "02000012",
+    "channel": "Voie3",
+    "device_name": "todo",
+    "unit": "Var",
+    "measured_value": "Var",
+    "value": "-65"
   },
   {
     "measured_at": "2021-07-03T20:40:00.000Z",
-    "nature": "Voie4",
-    "device_name": "02000012",
-    "measured_value": "P",
-    "value": "0",
-    "project": "project_name"
+    "sn": "02000012",
+    "channel": "Voie4",
+    "device_name": "todo",
+    "unit": "W",
+    "measured_value": "W",
+    "value": "0"
   },
   {
     "measured_at": "2021-07-03T20:40:00.000Z",
-    "nature": "Voie4",
-    "device_name": "02000012",
-    "measured_value": "Q",
-    "value": "0",
-    "project": "project_name"
+    "sn": "02000012",
+    "channel": "Voie4",
+    "device_name": "todo",
+    "unit": "Var",
+    "measured_value": "Var",
+    "value": "0"
   },
   {
     "measured_at": "2021-07-03T20:40:00.000Z",
-    "nature": "Voie5",
-    "device_name": "02000012",
-    "measured_value": "P",
-    "value": "0",
-    "project": "project_name"
+    "sn": "02000012",
+    "channel": "Voie5",
+    "device_name": "todo",
+    "unit": "W",
+    "measured_value": "W",
+    "value": "0"
   },
   {
     "measured_at": "2021-07-03T20:40:00.000Z",
-    "nature": "Voie5",
-    "device_name": "02000012",
-    "measured_value": "Q",
-    "value": "0",
-    "project": "project_name"
+    "sn": "02000012",
+    "channel": "Voie5",
+    "device_name": "todo",
+    "unit": "Var",
+    "measured_value": "Var",
+    "value": "0"
   },
   {
     "measured_at": "2021-07-03T20:40:00.000Z",
-    "nature": "Voie6",
-    "device_name": "02000012",
-    "measured_value": "P",
-    "value": "0",
-    "project": "project_name"
+    "sn": "02000012",
+    "channel": "Voie6",
+    "device_name": "todo",
+    "unit": "W",
+    "measured_value": "W",
+    "value": "0"
   },
   {
     "measured_at": "2021-07-03T20:40:00.000Z",
-    "nature": "Voie1",
-    "device_name": "02000012",
-    "measured_value": "Q",
-    "value": "0",
-    "project": "project_name"
+    "sn": "02000012",
+    "channel": "Voie1",
+    "device_name": "todo",
+    "unit": "Var",
+    "measured_value": "Var",
+    "value": "0"
   },
   {
     "measured_at": "2021-07-03T20:40:00.000Z",
-    "nature": "Voie1",
-    "device_name": "04000002",
-    "measured_value": "P",
-    "value": "26",
-    "project": "project_name"
+    "sn": "04000002",
+    "channel": "Voie1",
+    "device_name": "todo",
+    "unit": "W",
+    "measured_value": "W",
+    "value": "26"
   },
   {
     "measured_at": "2021-07-03T20:40:00.000Z",
-    "nature": "Voie1",
-    "device_name": "04000002",
-    "measured_value": "Q",
-    "value": "-64",
-    "project": "project_name"
+    "sn": "04000002",
+    "channel": "Voie1",
+    "device_name": "todo",
+    "unit": "Var",
+    "measured_value": "Var",
+    "value": "-64"
   },
   {
     "measured_at": "2021-07-03T20:40:00.000Z",
-    "nature": "Voie2",
-    "device_name": "04000002",
-    "measured_value": "P",
-    "value": "8",
-    "project": "project_name"
+    "sn": "04000002",
+    "channel": "Voie2",
+    "device_name": "todo",
+    "unit": "W",
+    "measured_value": "W",
+    "value": "8"
   },
   {
     "measured_at": "2021-07-03T20:40:00.000Z",
-    "nature": "Voie2",
-    "device_name": "04000002",
-    "measured_value": "Q",
-    "value": "-10",
-    "project": "project_name"
+    "sn": "04000002",
+    "channel": "Voie2",
+    "device_name": "todo",
+    "unit": "Var",
+    "measured_value": "Var",
+    "value": "-10"
   },
   {
     "measured_at": "2021-07-03T20:40:00.000Z",
-    "nature": "Voie3",
-    "device_name": "04000002",
-    "measured_value": "P",
-    "value": "-0",
-    "project": "project_name"
+    "sn": "04000002",
+    "channel": "Voie3",
+    "device_name": "todo",
+    "unit": "W",
+    "measured_value": "W",
+    "value": "-0"
   },
   {
     "measured_at": "2021-07-03T20:40:00.000Z",
-    "nature": "Voie3",
-    "device_name": "04000002",
-    "measured_value": "Q",
-    "value": "-27",
-    "project": "project_name"
+    "sn": "04000002",
+    "channel": "Voie3",
+    "device_name": "todo",
+    "unit": "Var",
+    "measured_value": "Var",
+    "value": "-27"
   },
   {
     "measured_at": "2021-07-03T20:40:00.000Z",
-    "nature": "Voie4",
-    "device_name": "04000002",
-    "measured_value": "P",
-    "value": "0",
-    "project": "project_name"
+    "sn": "04000002",
+    "channel": "Voie4",
+    "device_name": "todo",
+    "unit": "W",
+    "measured_value": "W",
+    "value": "0"
   },
   {
     "measured_at": "2021-07-03T20:40:00.000Z",
-    "nature": "Voie4",
-    "device_name": "04000002",
-    "measured_value": "Q",
-    "value": "0",
-    "project": "project_name"
+    "sn": "04000002",
+    "channel": "Voie4",
+    "device_name": "todo",
+    "unit": "Var",
+    "measured_value": "Var",
+    "value": "0"
   },
   {
     "measured_at": "2021-07-03T20:40:00.000Z",
-    "nature": "Voie5",
-    "device_name": "04000002",
-    "measured_value": "P",
-    "value": "0",
-    "project": "project_name"
+    "sn": "04000002",
+    "channel": "Voie5",
+    "device_name": "todo",
+    "unit": "W",
+    "measured_value": "W",
+    "value": "0"
   },
   {
     "measured_at": "2021-07-03T20:40:00.000Z",
-    "nature": "Voie5",
-    "device_name": "04000002",
-    "measured_value": "Q",
-    "value": "0",
-    "project": "project_name"
+    "sn": "04000002",
+    "channel": "Voie5",
+    "device_name": "todo",
+    "unit": "Var",
+    "measured_value": "Var",
+    "value": "0"
   },
   {
     "measured_at": "2021-07-03T20:40:00.000Z",
-    "nature": "Voie6",
-    "device_name": "04000002",
-    "measured_value": "P",
-    "value": "-0",
-    "project": "project_name"
+    "sn": "04000002",
+    "channel": "Voie6",
+    "device_name": "todo",
+    "unit": "W",
+    "measured_value": "W",
+    "value": "-0"
   },
   {
     "measured_at": "2021-07-03T20:40:00.000Z",
-    "nature": "Voie1",
-    "device_name": "04000002",
-    "measured_value": "Q",
-    "value": "-0",
-    "project": "project_name"
+    "sn": "04000002",
+    "channel": "Voie1",
+    "device_name": "todo",
+    "unit": "Var",
+    "measured_value": "Var",
+    "value": "-0"
   },
   {
     "measured_at": "2021-07-03T20:40:00.000Z",
-    "nature": "Voie1",
-    "device_name": "04000004",
-    "measured_value": "P",
-    "value": "4",
-    "project": "project_name"
+    "sn": "04000004",
+    "channel": "Voie1",
+    "device_name": "todo",
+    "unit": "W",
+    "measured_value": "W",
+    "value": "4"
   },
   {
     "measured_at": "2021-07-03T20:40:00.000Z",
-    "nature": "Voie1",
-    "device_name": "04000004",
-    "measured_value": "Q",
-    "value": "16",
-    "project": "project_name"
+    "sn": "04000004",
+    "channel": "Voie1",
+    "device_name": "todo",
+    "unit": "Var",
+    "measured_value": "Var",
+    "value": "16"
   },
   {
     "measured_at": "2021-07-03T20:40:00.000Z",
-    "nature": "Voie2",
-    "device_name": "04000004",
-    "measured_value": "P",
-    "value": "0",
-    "project": "project_name"
+    "sn": "04000004",
+    "channel": "Voie2",
+    "device_name": "todo",
+    "unit": "W",
+    "measured_value": "W",
+    "value": "0"
   },
   {
     "measured_at": "2021-07-03T20:40:00.000Z",
-    "nature": "Voie2",
-    "device_name": "04000004",
-    "measured_value": "Q",
-    "value": "0",
-    "project": "project_name"
+    "sn": "04000004",
+    "channel": "Voie2",
+    "device_name": "todo",
+    "unit": "Var",
+    "measured_value": "Var",
+    "value": "0"
   },
   {
     "measured_at": "2021-07-03T20:40:00.000Z",
-    "nature": "Voie3",
-    "device_name": "04000004",
-    "measured_value": "P",
-    "value": "0",
-    "project": "project_name"
+    "sn": "04000004",
+    "channel": "Voie3",
+    "device_name": "todo",
+    "unit": "W",
+    "measured_value": "W",
+    "value": "0"
   },
   {
     "measured_at": "2021-07-03T20:40:00.000Z",
-    "nature": "Voie3",
-    "device_name": "04000004",
-    "measured_value": "Q",
-    "value": "-0",
-    "project": "project_name"
+    "sn": "04000004",
+    "channel": "Voie3",
+    "device_name": "todo",
+    "unit": "Var",
+    "measured_value": "Var",
+    "value": "-0"
   },
   {
     "measured_at": "2021-07-03T20:40:00.000Z",
-    "nature": "Voie4",
-    "device_name": "04000004",
-    "measured_value": "P",
-    "value": "-0",
-    "project": "project_name"
+    "sn": "04000004",
+    "channel": "Voie4",
+    "device_name": "todo",
+    "unit": "W",
+    "measured_value": "W",
+    "value": "-0"
   },
   {
     "measured_at": "2021-07-03T20:40:00.000Z",
-    "nature": "Voie4",
-    "device_name": "04000004",
-    "measured_value": "Q",
-    "value": "0",
-    "project": "project_name"
+    "sn": "04000004",
+    "channel": "Voie4",
+    "device_name": "todo",
+    "unit": "Var",
+    "measured_value": "Var",
+    "value": "0"
   },
   {
     "measured_at": "2021-07-03T20:40:00.000Z",
-    "nature": "Voie5",
-    "device_name": "04000004",
-    "measured_value": "P",
-    "value": "0",
-    "project": "project_name"
+    "sn": "04000004",
+    "channel": "Voie5",
+    "device_name": "todo",
+    "unit": "W",
+    "measured_value": "W",
+    "value": "0"
   },
   {
     "measured_at": "2021-07-03T20:40:00.000Z",
-    "nature": "Voie5",
-    "device_name": "04000004",
-    "measured_value": "Q",
-    "value": "0",
-    "project": "project_name"
+    "sn": "04000004",
+    "channel": "Voie5",
+    "device_name": "todo",
+    "unit": "Var",
+    "measured_value": "Var",
+    "value": "0"
   },
   {
     "measured_at": "2021-07-03T20:40:00.000Z",
-    "nature": "Voie6",
-    "device_name": "04000004",
-    "measured_value": "P",
-    "value": "-0",
-    "project": "project_name"
+    "sn": "04000004",
+    "channel": "Voie6",
+    "device_name": "todo",
+    "unit": "W",
+    "measured_value": "W",
+    "value": "-0"
   },
   {
     "measured_at": "2021-07-03T20:40:00.000Z",
-    "nature": "Voie1",
-    "device_name": "04000004",
-    "measured_value": "Q",
-    "value": "-0",
-    "project": "project_name"
+    "sn": "04000004",
+    "channel": "Voie1",
+    "device_name": "todo",
+    "unit": "Var",
+    "measured_value": "Var",
+    "value": "-0"
   }
 ]
+

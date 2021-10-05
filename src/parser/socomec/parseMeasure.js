@@ -1,7 +1,6 @@
-const { MEASURE_STATES } = require("../../models");
 const { DEVICE_NAME, METADATA_KEY } = require("../constant");
 
-const { LOAD_NAME, USAGE, NATURE, MEASURED_VALUE, UNIT, SCALE } = METADATA_KEY;
+const { LOAD_NAME, USAGE, NATURE, UNIT, MEASURED_VALUE } = METADATA_KEY;
 
 // 2020-05-27T11:00:00,186706,0,26,
 
@@ -20,15 +19,13 @@ const parseMeasure = async (row, metadatas) => {
   const measures = measureMetadatas.map((measureMetadata, index) => {
     const measureIndex = index + 1;
     const measure = {
-      device_name: metadatas[DEVICE_NAME],
       measured_at: measureDateAsString,
-      state: MEASURE_STATES.PRESENT,
-      load_name: measureMetadata[LOAD_NAME],
+      sn: measureMetadata[LOAD_NAME],
+      channel: measureMetadata[NATURE],
+      device_name: metadatas[DEVICE_NAME],
       usage: measureMetadata[USAGE],
-      nature: measureMetadata[NATURE],
       measured_value: measureMetadata[MEASURED_VALUE],
       unit: measureMetadata[UNIT],
-      scale: measureMetadata[SCALE],
       value: row[measureIndex],
     };
 

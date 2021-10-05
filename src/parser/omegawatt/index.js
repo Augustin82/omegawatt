@@ -112,8 +112,7 @@ const rowToMeasures = (metadata) => (row) => {
   if (!measured_at) {
     throw Error("Incorrect timestamp format");
   }
-  const project = "project_name";
-  let nature, measured_value;
+  let channel, unit;
 
   let offset = 1;
 
@@ -121,24 +120,26 @@ const rowToMeasures = (metadata) => (row) => {
     if (offset < 1) {
       // nope
     } else if (offset > 0 && offset < 4) {
-      nature = `Ph${offset}`;
-      measured_value = "V";
+      channel = `Ph${offset}`;
+      unit = "V"; // "V"
     } else {
       const columnForDevice = (offset - voltageOffset + 1) % 12;
       const voieNumber = ~~((columnForDevice - 1) / 2) + 1;
-      nature = `Voie${voieNumber}`;
-      measured_value = columnForDevice % 2 === 0 ? "Q" : "P";
+      channel = `Voie${voieNumber}`;
+      unit = columnForDevice % 2 === 0 ? "Var" : "W"; // "Q" : "P"
     }
     const device_offset = ~~((offset - voltageOffset) / 12);
-    const device_name = metadata[device_offset];
+    const device_name = "todo";
+    const sn = metadata[device_offset];
     const value = row[offset];
     const measure = {
       measured_at,
-      nature,
+      sn,
+      channel,
       device_name,
-      measured_value,
+      unit,
+      measured_value: unit,
       value,
-      project,
     };
     measures.push(measure);
     offset += 1;
