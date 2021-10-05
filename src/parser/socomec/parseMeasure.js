@@ -1,3 +1,4 @@
+const { parseSocomecTime } = require("../../lib/dateHelpers");
 const { DEVICE_NAME, METADATA_KEY } = require("../constant");
 
 const { LOAD_NAME, USAGE, NATURE, UNIT, MEASURED_VALUE } = METADATA_KEY;
@@ -19,7 +20,7 @@ const parseMeasure = async (row, metadatas) => {
   const measures = measureMetadatas.map((measureMetadata, index) => {
     const measureIndex = index + 1;
     const measure = {
-      measured_at: measureDateAsString,
+      measured_at: parseSocomecTime(measureDateAsString),
       sn: measureMetadata[LOAD_NAME],
       channel: measureMetadata[NATURE],
       device_name: metadatas[DEVICE_NAME],

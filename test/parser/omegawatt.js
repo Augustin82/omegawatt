@@ -2,9 +2,10 @@ const chai = require("chai");
 // chai.config.truncateThreshold = 0;
 let expect = chai.expect;
 const { DateTime } = require("luxon");
-let { parseOmegawatt, timestampToDate } = require("../../src/parser/omegawatt");
+let { parseOmegawatt } = require("../../src/parser/omegawatt");
 let { getDeviceInfo } = require("../../src/parser/deviceTable");
 let fs = require("fs");
+const { parseOmegawattTime } = require("../../src/lib/dateHelpers");
 
 let empty = "./test/fixtures/parser/empty.csv";
 let junk = "./test/fixtures/parser/junk.csv";
@@ -46,7 +47,7 @@ describe("Omegawatt utils", () => {
 
       for (let i = 0; i < fixtures.length; i++) {
         const [timestamp, validity] = fixtures[i];
-        const isValid = timestampToDate(timestamp);
+        const isValid = parseOmegawattTime(timestamp);
         expect(
           isValid,
           `Timestamp '${timestamp}' should have validity ${validity} but has validity ${isValid}`

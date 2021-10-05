@@ -1,6 +1,6 @@
-const { DateTime } = require("luxon");
 const fs = require("fs");
 const parse = require("csv-parse/lib/sync");
+const { parseOmegawattTime } = require("../../lib/dateHelpers.js");
 
 const { guessDelimiter } = require("../../lib");
 
@@ -89,27 +89,10 @@ const secondRowToFileType = (fileContent, delimiter) => {
   return fileType;
 };
 
-const timestampToDate = (timestamp) => {
-  // timestamp format for omegawatt:
-  // DD/MM/YY HH:mm:ss
-  // luxon equivalent:
-  // dd/MM/yy HH:mm:ss
-
-  if (!timestamp) {
-    return null;
-  }
-
-  return DateTime.fromFormat(timestamp, "dd/MM/yy HH:mm:ss", {
-    zone: "Europe/Paris",
-  })
-    .toUTC()
-    .toISO();
-};
-
 /** @param {DeviceTable} deviceTable **/
 const rowToMeasures = (metadata, deviceTable) => (row) => {
   const measures = [];
-  const measured_at = timestampToDate(row[0]);
+  const measured_at = parseOmegawattTime(row[0]);
   if (!measured_at) {
     throw Error("Incorrect timestamp format");
   }
@@ -199,5 +182,4 @@ const parseOmegawatt = async (filepath, deviceTable, delimiter = "\t") => {
 
 module.exports = {
   parseOmegawatt,
-  timestampToDate,
 };
