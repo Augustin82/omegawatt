@@ -6,50 +6,50 @@ const { guessDelimiter } = require("../../lib");
 
 /** @type {(filepath: string, delimiter?: string) => Promise<Record<any, any>>} */
 const parseDeviceTable = async (filepath, delimiter = "\t") => {
+  let deviceTable = {};
   try {
     delimiter = delimiter || guessDelimiter(filepath);
 
-    const fileContent = fs.readFileSync(filepath, {
-      encoding: "utf8",
-      flag: "r",
-    });
+    if (fs.existsSync(filepath)) {
+      const fileContent = fs.readFileSync(filepath, {
+        encoding: "utf8",
+        flag: "r",
+      });
 
-    const csvOptions = {
-      delimiter,
-      columns: true,
-      skip_empty_lines: true,
-    };
-
-    let deviceTable = {};
-    const rows = parse(fileContent, csvOptions);
-
-    for (const row of rows) {
-      // SN, Channel, Device Name, Début, Coeff, Usage
-      const { sn, channel, device_name, start_date, coeff, usage } = row;
-      const chan = `${channel}`.toLowerCase();
-      if (!deviceTable[sn]) {
-        deviceTable[sn] = {};
-      }
-      if (!deviceTable[sn][chan]) {
-        deviceTable[sn][chan] = {};
-      }
-      const isoDate = DateTime.fromFormat(start_date, "dd/MM/yy HH:mm:ss", {
-        zone: "Europe/Paris",
-      })
-        .toUTC()
-        .toISO();
-      deviceTable[sn][chan][isoDate] = {
-        device_name,
-        coeff,
-        usage,
+      const csvOptions = {
+        delimiter,
+        columns: true,
+        skip_empty_lines: true,
       };
-    }
 
-    return deviceTable;
-  } catch (_e) {
-    console.log({ _e });
-    return {};
+      const rows = parse(fileContent, csvOptions);
+
+      for (const row of rows) {
+        // SN, Channel, Device Name, Début, Coeff, Usage
+        const { sn, channel, device_name, start_date, coeff, usage } = row;
+        const chan = `${channel}`.toLowerCase();
+        if (!deviceTable[sn]) {
+          deviceTable[sn] = {};
+        }
+        if (!deviceTable[sn][chan]) {
+          deviceTable[sn][chan] = {};
+        }
+        const isoDate = DateTime.fromFormat(start_date, "dd/MM/yy HH:mm:ss", {
+          zone: "Europe/Paris",
+        })
+          .toUTC()
+          .toISO();
+        deviceTable[sn][chan][isoDate] = {
+          device_name,
+          coeff,
+          usage,
+        };
+      }
+    }
+  } catch (error) {
+    console.log({ error });
   }
+  return deviceTable;
 };
 
 /** @typedef {Record<string, Record<string, Record<string, DeviceInfo>>>} DeviceTable **/
