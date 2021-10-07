@@ -126,7 +126,7 @@ const rowToMeasures = (metadata, deviceTable) => (row) => {
       sn,
       channel,
       device_name,
-      unit,
+     // unit,           /****************** cette ligne semble en trop *****************/
       measured_value: unit,
       value,
     };
