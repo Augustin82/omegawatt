@@ -35,7 +35,7 @@
     "channel": "Voie1",
     "device_name": "02000012_1",
     "usage": "",
-    "measured_value": "W",
+    "measured_value": "P",
     "unit": "W",
     "value": "20"
   },
@@ -45,7 +45,7 @@
     "channel": "Voie1",
     "device_name": "02000012_1",
     "usage": "",
-    "measured_value": "Var",
+    "measured_value": "Q",
     "unit": "Var",
     "value": "-64"
   },
@@ -55,7 +55,7 @@
     "channel": "Voie2",
     "device_name": "02000012_2",
     "usage": "",
-    "measured_value": "W",
+    "measured_value": "P",
     "unit": "W",
     "value": "4"
   },
@@ -65,7 +65,7 @@
     "channel": "Voie2",
     "device_name": "02000012_2",
     "usage": "",
-    "measured_value": "Var",
+    "measured_value": "Q",
     "unit": "Var",
     "value": "-9"
   },
@@ -75,7 +75,7 @@
     "channel": "Voie3",
     "device_name": "02000012_3",
     "usage": "",
-    "measured_value": "W",
+    "measured_value": "P",
     "unit": "W",
     "value": "12"
   },
@@ -85,7 +85,7 @@
     "channel": "Voie3",
     "device_name": "02000012_3",
     "usage": "",
-    "measured_value": "Var",
+    "measured_value": "Q",
     "unit": "Var",
     "value": "-64"
   },
@@ -95,7 +95,7 @@
     "channel": "Voie4",
     "device_name": "02000012_4",
     "usage": "",
-    "measured_value": "W",
+    "measured_value": "P",
     "unit": "W",
     "value": "0"
   },
@@ -105,7 +105,7 @@
     "channel": "Voie4",
     "device_name": "02000012_4",
     "usage": "",
-    "measured_value": "Var",
+    "measured_value": "Q",
     "unit": "Var",
     "value": "0"
   },
@@ -115,7 +115,7 @@
     "channel": "Voie5",
     "device_name": "02000012_5",
     "usage": "",
-    "measured_value": "W",
+    "measured_value": "P",
     "unit": "W",
     "value": "0"
   },
@@ -125,7 +125,7 @@
     "channel": "Voie5",
     "device_name": "02000012_5",
     "usage": "",
-    "measured_value": "Var",
+    "measured_value": "Q",
     "unit": "Var",
     "value": "0"
   },
@@ -135,7 +135,7 @@
     "channel": "Voie6",
     "device_name": "02000012_6",
     "usage": "",
-    "measured_value": "W",
+    "measured_value": "P",
     "unit": "W",
     "value": "0"
   },
@@ -145,7 +145,7 @@
     "channel": "Voie1",
     "device_name": "02000012_1",
     "usage": "",
-    "measured_value": "Var",
+    "measured_value": "Q",
     "unit": "Var",
     "value": "0"
   },
@@ -155,7 +155,7 @@
     "channel": "Voie1",
     "device_name": "04000002_1",
     "usage": "",
-    "measured_value": "W",
+    "measured_value": "P",
     "unit": "W",
     "value": "26"
   },
@@ -165,7 +165,7 @@
     "channel": "Voie1",
     "device_name": "04000002_1",
     "usage": "",
-    "measured_value": "Var",
+    "measured_value": "Q",
     "unit": "Var",
     "value": "-64"
   },
@@ -175,7 +175,7 @@
     "channel": "Voie2",
     "device_name": "04000002_2",
     "usage": "",
-    "measured_value": "W",
+    "measured_value": "P",
     "unit": "W",
     "value": "8"
   },
@@ -185,7 +185,7 @@
     "channel": "Voie2",
     "device_name": "04000002_2",
     "usage": "",
-    "measured_value": "Var",
+    "measured_value": "Q",
     "unit": "Var",
     "value": "-10"
   },
@@ -195,7 +195,7 @@
     "channel": "Voie3",
     "device_name": "04000002_3",
     "usage": "",
-    "measured_value": "W",
+    "measured_value": "P",
     "unit": "W",
     "value": "0"
   },
@@ -205,7 +205,7 @@
     "channel": "Voie3",
     "device_name": "04000002_3",
     "usage": "",
-    "measured_value": "Var",
+    "measured_value": "Q",
     "unit": "Var",
     "value": "-27"
   },
@@ -215,7 +215,7 @@
     "channel": "Voie4",
     "device_name": "04000002_4",
     "usage": "",
-    "measured_value": "W",
+    "measured_value": "P",
     "unit": "W",
     "value": "0"
   },
@@ -225,7 +225,7 @@
     "channel": "Voie4",
     "device_name": "04000002_4",
     "usage": "",
-    "measured_value": "Var",
+    "measured_value": "Q",
     "unit": "Var",
     "value": "0"
   },
@@ -235,7 +235,7 @@
     "channel": "Voie5",
     "device_name": "04000002_5",
     "usage": "",
-    "measured_value": "W",
+    "measured_value": "P",
     "unit": "W",
     "value": "0"
   },
@@ -245,7 +245,7 @@
     "channel": "Voie5",
     "device_name": "04000002_5",
     "usage": "",
-    "measured_value": "Var",
+    "measured_value": "Q",
     "unit": "Var",
     "value": "0"
   },
@@ -255,7 +255,7 @@
     "channel": "Voie6",
     "device_name": "04000002_6",
     "usage": "",
-    "measured_value": "W",
+    "measured_value": "P",
     "unit": "W",
     "value": "0"
   },
@@ -265,7 +265,7 @@
     "channel": "Voie1",
     "device_name": "04000002_1",
     "usage": "",
-    "measured_value": "Var",
+    "measured_value": "Q",
     "unit": "Var",
     "value": "0"
   },
@@ -275,7 +275,7 @@
     "channel": "Voie1",
     "device_name": "04000004_1",
     "usage": "",
-    "measured_value": "W",
+    "measured_value": "P",
     "unit": "W",
     "value": "4"
   },
@@ -285,7 +285,7 @@
     "channel": "Voie1",
     "device_name": "04000004_1",
     "usage": "",
-    "measured_value": "Var",
+    "measured_value": "Q",
     "unit": "Var",
     "value": "16"
   },
@@ -295,7 +295,7 @@
     "channel": "Voie2",
     "device_name": "04000004_2",
     "usage": "",
-    "measured_value": "W",
+    "measured_value": "P",
     "unit": "W",
     "value": "0"
   },
@@ -305,7 +305,7 @@
     "channel": "Voie2",
     "device_name": "04000004_2",
     "usage": "",
-    "measured_value": "Var",
+    "measured_value": "Q",
     "unit": "Var",
     "value": "0"
   },
@@ -315,7 +315,7 @@
     "channel": "Voie3",
     "device_name": "04000004_3",
     "usage": "",
-    "measured_value": "W",
+    "measured_value": "P",
     "unit": "W",
     "value": "0"
   },
@@ -325,7 +325,7 @@
     "channel": "Voie3",
     "device_name": "04000004_3",
     "usage": "",
-    "measured_value": "Var",
+    "measured_value": "Q",
     "unit": "Var",
     "value": "0"
   },
@@ -335,7 +335,7 @@
     "channel": "Voie4",
     "device_name": "04000004_4",
     "usage": "",
-    "measured_value": "W",
+    "measured_value": "P",
     "unit": "W",
     "value": "0"
   },
@@ -345,7 +345,7 @@
     "channel": "Voie4",
     "device_name": "04000004_4",
     "usage": "",
-    "measured_value": "Var",
+    "measured_value": "Q",
     "unit": "Var",
     "value": "0"
   },
@@ -355,7 +355,7 @@
     "channel": "Voie5",
     "device_name": "04000004_5",
     "usage": "",
-    "measured_value": "W",
+    "measured_value": "P",
     "unit": "W",
     "value": "0"
   },
@@ -365,7 +365,7 @@
     "channel": "Voie5",
     "device_name": "04000004_5",
     "usage": "",
-    "measured_value": "Var",
+    "measured_value": "Q",
     "unit": "Var",
     "value": "0"
   },
@@ -375,7 +375,7 @@
     "channel": "Voie6",
     "device_name": "04000004_6",
     "usage": "",
-    "measured_value": "W",
+    "measured_value": "P",
     "unit": "W",
     "value": "0"
   },
@@ -385,7 +385,7 @@
     "channel": "Voie1",
     "device_name": "04000004_1",
     "usage": "",
-    "measured_value": "Var",
+    "measured_value": "Q",
     "unit": "Var",
     "value": "0"
   },
@@ -425,7 +425,7 @@
     "channel": "Voie1",
     "device_name": "02000012_1",
     "usage": "",
-    "measured_value": "W",
+    "measured_value": "P",
     "unit": "W",
     "value": "20"
   },
@@ -435,7 +435,7 @@
     "channel": "Voie1",
     "device_name": "02000012_1",
     "usage": "",
-    "measured_value": "Var",
+    "measured_value": "Q",
     "unit": "Var",
     "value": "-64"
   },
@@ -445,7 +445,7 @@
     "channel": "Voie2",
     "device_name": "02000012_2",
     "usage": "",
-    "measured_value": "W",
+    "measured_value": "P",
     "unit": "W",
     "value": "4"
   },
@@ -455,7 +455,7 @@
     "channel": "Voie2",
     "device_name": "02000012_2",
     "usage": "",
-    "measured_value": "Var",
+    "measured_value": "Q",
     "unit": "Var",
     "value": "-9"
   },
@@ -465,7 +465,7 @@
     "channel": "Voie3",
     "device_name": "02000012_3",
     "usage": "",
-    "measured_value": "W",
+    "measured_value": "P",
     "unit": "W",
     "value": "12"
   },
@@ -475,7 +475,7 @@
     "channel": "Voie3",
     "device_name": "02000012_3",
     "usage": "",
-    "measured_value": "Var",
+    "measured_value": "Q",
     "unit": "Var",
     "value": "-65"
   },
@@ -485,7 +485,7 @@
     "channel": "Voie4",
     "device_name": "02000012_4",
     "usage": "",
-    "measured_value": "W",
+    "measured_value": "P",
     "unit": "W",
     "value": "0"
   },
@@ -495,7 +495,7 @@
     "channel": "Voie4",
     "device_name": "02000012_4",
     "usage": "",
-    "measured_value": "Var",
+    "measured_value": "Q",
     "unit": "Var",
     "value": "0"
   },
@@ -505,7 +505,7 @@
     "channel": "Voie5",
     "device_name": "02000012_5",
     "usage": "",
-    "measured_value": "W",
+    "measured_value": "P",
     "unit": "W",
     "value": "0"
   },
@@ -515,7 +515,7 @@
     "channel": "Voie5",
     "device_name": "02000012_5",
     "usage": "",
-    "measured_value": "Var",
+    "measured_value": "Q",
     "unit": "Var",
     "value": "0"
   },
@@ -525,7 +525,7 @@
     "channel": "Voie6",
     "device_name": "02000012_6",
     "usage": "",
-    "measured_value": "W",
+    "measured_value": "P",
     "unit": "W",
     "value": "0"
   },
@@ -535,7 +535,7 @@
     "channel": "Voie1",
     "device_name": "02000012_1",
     "usage": "",
-    "measured_value": "Var",
+    "measured_value": "Q",
     "unit": "Var",
     "value": "0"
   },
@@ -545,7 +545,7 @@
     "channel": "Voie1",
     "device_name": "04000002_1",
     "usage": "",
-    "measured_value": "W",
+    "measured_value": "P",
     "unit": "W",
     "value": "26"
   },
@@ -555,7 +555,7 @@
     "channel": "Voie1",
     "device_name": "04000002_1",
     "usage": "",
-    "measured_value": "Var",
+    "measured_value": "Q",
     "unit": "Var",
     "value": "-64"
   },
@@ -565,7 +565,7 @@
     "channel": "Voie2",
     "device_name": "04000002_2",
     "usage": "",
-    "measured_value": "W",
+    "measured_value": "P",
     "unit": "W",
     "value": "8"
   },
@@ -575,7 +575,7 @@
     "channel": "Voie2",
     "device_name": "04000002_2",
     "usage": "",
-    "measured_value": "Var",
+    "measured_value": "Q",
     "unit": "Var",
     "value": "-10"
   },
@@ -585,7 +585,7 @@
     "channel": "Voie3",
     "device_name": "04000002_3",
     "usage": "",
-    "measured_value": "W",
+    "measured_value": "P",
     "unit": "W",
     "value": "0"
   },
@@ -595,7 +595,7 @@
     "channel": "Voie3",
     "device_name": "04000002_3",
     "usage": "",
-    "measured_value": "Var",
+    "measured_value": "Q",
     "unit": "Var",
     "value": "-27"
   },
@@ -605,7 +605,7 @@
     "channel": "Voie4",
     "device_name": "04000002_4",
     "usage": "",
-    "measured_value": "W",
+    "measured_value": "P",
     "unit": "W",
     "value": "0"
   },
@@ -615,7 +615,7 @@
     "channel": "Voie4",
     "device_name": "04000002_4",
     "usage": "",
-    "measured_value": "Var",
+    "measured_value": "Q",
     "unit": "Var",
     "value": "0"
   },
@@ -625,7 +625,7 @@
     "channel": "Voie5",
     "device_name": "04000002_5",
     "usage": "",
-    "measured_value": "W",
+    "measured_value": "P",
     "unit": "W",
     "value": "0"
   },
@@ -635,7 +635,7 @@
     "channel": "Voie5",
     "device_name": "04000002_5",
     "usage": "",
-    "measured_value": "Var",
+    "measured_value": "Q",
     "unit": "Var",
     "value": "0"
   },
@@ -645,7 +645,7 @@
     "channel": "Voie6",
     "device_name": "04000002_6",
     "usage": "",
-    "measured_value": "W",
+    "measured_value": "P",
     "unit": "W",
     "value": "0"
   },
@@ -655,7 +655,7 @@
     "channel": "Voie1",
     "device_name": "04000002_1",
     "usage": "",
-    "measured_value": "Var",
+    "measured_value": "Q",
     "unit": "Var",
     "value": "0"
   },
@@ -665,7 +665,7 @@
     "channel": "Voie1",
     "device_name": "04000004_1",
     "usage": "",
-    "measured_value": "W",
+    "measured_value": "P",
     "unit": "W",
     "value": "4"
   },
@@ -675,7 +675,7 @@
     "channel": "Voie1",
     "device_name": "04000004_1",
     "usage": "",
-    "measured_value": "Var",
+    "measured_value": "Q",
     "unit": "Var",
     "value": "16"
   },
@@ -685,7 +685,7 @@
     "channel": "Voie2",
     "device_name": "04000004_2",
     "usage": "",
-    "measured_value": "W",
+    "measured_value": "P",
     "unit": "W",
     "value": "0"
   },
@@ -695,7 +695,7 @@
     "channel": "Voie2",
     "device_name": "04000004_2",
     "usage": "",
-    "measured_value": "Var",
+    "measured_value": "Q",
     "unit": "Var",
     "value": "0"
   },
@@ -705,7 +705,7 @@
     "channel": "Voie3",
     "device_name": "04000004_3",
     "usage": "",
-    "measured_value": "W",
+    "measured_value": "P",
     "unit": "W",
     "value": "0"
   },
@@ -715,7 +715,7 @@
     "channel": "Voie3",
     "device_name": "04000004_3",
     "usage": "",
-    "measured_value": "Var",
+    "measured_value": "Q",
     "unit": "Var",
     "value": "0"
   },
@@ -725,7 +725,7 @@
     "channel": "Voie4",
     "device_name": "04000004_4",
     "usage": "",
-    "measured_value": "W",
+    "measured_value": "P",
     "unit": "W",
     "value": "0"
   },
@@ -735,7 +735,7 @@
     "channel": "Voie4",
     "device_name": "04000004_4",
     "usage": "",
-    "measured_value": "Var",
+    "measured_value": "Q",
     "unit": "Var",
     "value": "0"
   },
@@ -745,7 +745,7 @@
     "channel": "Voie5",
     "device_name": "04000004_5",
     "usage": "",
-    "measured_value": "W",
+    "measured_value": "P",
     "unit": "W",
     "value": "0"
   },
@@ -755,7 +755,7 @@
     "channel": "Voie5",
     "device_name": "04000004_5",
     "usage": "",
-    "measured_value": "Var",
+    "measured_value": "Q",
     "unit": "Var",
     "value": "0"
   },
@@ -765,7 +765,7 @@
     "channel": "Voie6",
     "device_name": "04000004_6",
     "usage": "",
-    "measured_value": "W",
+    "measured_value": "P",
     "unit": "W",
     "value": "0"
   },
@@ -775,7 +775,7 @@
     "channel": "Voie1",
     "device_name": "04000004_1",
     "usage": "",
-    "measured_value": "Var",
+    "measured_value": "Q",
     "unit": "Var",
     "value": "0"
   }

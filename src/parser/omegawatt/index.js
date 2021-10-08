@@ -98,6 +98,7 @@ const rowToMeasures = (metadata, deviceTable) => (row) => {
   }
   let channel,
     unit,
+    measured_value,
     chan = "";
 
   let offset = 1;
@@ -109,13 +110,14 @@ const rowToMeasures = (metadata, deviceTable) => (row) => {
     } else if (offset > 0 && offset < 4) {
       channel = `Ph${offset}`;
       chan = channel.toLowerCase();
-      unit = "V"; // "V"
+      [measured_value, unit] = ["V", "V"];
     } else {
       const columnForDevice = (offset - voltageOffset + 1) % 12;
       voieNumber = ~~((columnForDevice - 1) / 2) + 1;
       channel = `Voie${voieNumber}`;
       chan = `${voieNumber || ""}`.toLowerCase();
-      unit = columnForDevice % 2 === 0 ? "Var" : "W"; // "Q" : "P"
+      [measured_value, unit] =
+        columnForDevice % 2 === 0 ? ["Q", "Var"] : ["P", "W"];
     }
     const device_offset = ~~((offset - voltageOffset) / 12);
     const sn = metadata[device_offset];
@@ -127,7 +129,7 @@ const rowToMeasures = (metadata, deviceTable) => (row) => {
       channel,
       device_name,
       usage,
-      measured_value: unit,
+      measured_value,
       unit,
       value,
     };
