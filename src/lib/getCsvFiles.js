@@ -23,7 +23,11 @@ function walkSync(dir, filelist) {
 function getCsvFiles(dirPath) {
   const files = [];
   walkSync(dirPath, files);
-  return files.filter((file) => file.endsWith(".csv") || file.endsWith(".tsv"));
+  return files.filter(
+    (file) =>
+      !file.endsWith("device_name.csv") &&
+      (file.endsWith(".csv") || file.endsWith(".tsv"))
+  );
 }
 
 module.exports = getCsvFiles;

@@ -5,7 +5,7 @@ const parse = require("csv-parse/lib/sync");
 const { logger, guessDelimiter } = require("../../lib");
 
 /** @type {(filepath: string, delimiter?: string) => Promise<Record<any, any>>} */
-const parseDeviceTable = async (filepath, delimiter = "\t") => {
+const parseDeviceTable = async (filepath, delimiter) => {
   let deviceTable = {};
   try {
     delimiter = delimiter || guessDelimiter(filepath);
@@ -25,8 +25,15 @@ const parseDeviceTable = async (filepath, delimiter = "\t") => {
       const rows = parse(fileContent, csvOptions);
 
       for (const row of rows) {
-        // SN, Channel, Device Name, Début, Coeff, Usage
-        const { sn, channel, device_name, start_date, coeff, usage } = row;
+        // sn, channel, device name, start date, coef, usage
+        const {
+          sn,
+          channel,
+          "device name": device_name,
+          "start date": start_date,
+          coef,
+          usage,
+        } = row;
         const chan = `${channel}`.toLowerCase();
         if (!deviceTable[sn]) {
           deviceTable[sn] = {};
@@ -34,14 +41,14 @@ const parseDeviceTable = async (filepath, delimiter = "\t") => {
         if (!deviceTable[sn][chan]) {
           deviceTable[sn][chan] = {};
         }
-        const isoDate = DateTime.fromFormat(start_date, "dd/MM/yy HH:mm:ss", {
+        const isoDate = DateTime.fromFormat(start_date, "dd/MM/yy HH:mm", {
           zone: "Europe/Paris",
         })
           .toUTC()
           .toISO();
         deviceTable[sn][chan][isoDate] = {
           device_name,
-          coeff,
+          coef,
           usage,
         };
       }
@@ -53,7 +60,7 @@ const parseDeviceTable = async (filepath, delimiter = "\t") => {
 };
 
 /** @typedef {Record<string, Record<string, Record<string, DeviceInfo>>>} DeviceTable **/
-/** @typedef {{ device_name: string, coeff: number, usage: string }} DeviceInfo **/
+/** @typedef {{ device_name: string, coef: number, usage: string }} DeviceInfo **/
 
 /**
  * @param {DeviceTable} deviceTable
@@ -72,7 +79,7 @@ const getDeviceInfo = (deviceTable) => (serialNumber, channel, timestamp) => {
           const period = periods[start];
           return {
             device_name: period.device_name,
-            coeff: period.coeff,
+            coef: period.coef,
             usage: period.usage,
           };
         }
@@ -81,7 +88,7 @@ const getDeviceInfo = (deviceTable) => (serialNumber, channel, timestamp) => {
   }
   return {
     device_name: [serialNumber, channel].filter(Boolean).join("_"),
-    coeff: 1,
+    coef: 1,
     usage: "",
   };
 };

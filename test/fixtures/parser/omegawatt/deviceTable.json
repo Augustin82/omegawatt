@@ -1,79 +1,79 @@
 {
   "02000015": {
-    "voie1": {
+    "1": {
       "2021-06-20T08:00:00.000Z": {
-        "coeff": "1",
         "device_name": "Borne Charge",
-        "usage": "mobilité"
-      }
-    },
-    "voie2": {
-      "2021-06-20T08:00:00.000Z": {
-        "coeff": "1",
-        "device_name": "Borne Charge",
+        "coef": "1",
         "usage": "mobilité"
       },
-      "2021-07-13T08:00:00.000Z": {
-        "coeff": "1.2",
+      "2021-07-02T08:00:00.000Z": {
         "device_name": "Nouvelle Borne Charge",
+        "coef": "1.2",
         "usage": "mobilité"
       }
     },
-    "voie3": {
+    "2": {
       "2021-06-20T08:00:00.000Z": {
-        "coeff": "1",
         "device_name": "Borne Charge",
+        "coef": "1",
+        "usage": "mobilité"
+      }
+    },
+    "3": {
+      "2021-06-20T08:00:00.000Z": {
+        "device_name": "Borne Charge",
+        "coef": "1",
         "usage": "mobilité"
       }
     },
     "ph1": {
       "2021-06-20T08:00:00.000Z": {
-        "coeff": "1",
         "device_name": "Séchoir",
+        "coef": "1",
         "usage": "séchage"
       }
     },
     "ph2": {
       "2021-06-20T08:00:00.000Z": {
-        "coeff": "1",
         "device_name": "Séchoir",
+        "coef": "1",
         "usage": "séchage"
       }
     },
     "ph3": {
       "2021-06-20T08:00:00.000Z": {
-        "coeff": "1",
         "device_name": "Séchoir",
+        "coef": "1",
         "usage": "séchage"
       }
     }
   },
   "04000026": {
-    "voie1": {
+    "1": {
       "2021-06-20T08:00:00.000Z": {
-        "coeff": "1",
         "device_name": "Gén séchoir",
+        "coef": "1",
         "usage": "séchage"
       }
     },
-    "voie2": {
+    "2": {
       "2021-06-20T08:00:00.000Z": {
-        "coeff": "1",
         "device_name": "Gén séchoir",
+        "coef": "1",
         "usage": "séchage"
       }
     },
-    "voie3": {
+    "3": {
       "2021-06-20T08:00:00.000Z": {
-        "coeff": "1",
         "device_name": "Gén séchoir",
+        "coef": "1",
         "usage": "séchage"
       }
     },
-    "voie4": {
+    "4": {
       "2021-06-20T08:00:00.000Z": {
-        "coeff": "1",
         "device_name": "Process séchoir",
+        "coef": "1",
         "usage": "séchage"
       }
     }

@@ -23,7 +23,7 @@ const start = async (customer) => {
   for (let projectDir of projectDirs) {
     const projectName = path.basename(projectDir);
     const deviceTable = await getDeviceTable(
-      path.join(customerDir, projectName, "_device.name.csv")
+      path.join(customerDir, projectName, "device_name.csv")
     );
 
     const deviceDirs = getDeviceDirs(projectDir);

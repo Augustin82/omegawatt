@@ -1,11 +1,11 @@
-sn,channel,device_name,start_date,coeff,usage
-02000015,ph1,Séchoir,20/08/2021 10:00:00,1,séchage
-02000015,ph2,Séchoir,20/08/2021 10:00:00,1,séchage
-02000015,ph3,Séchoir,20/08/2021 10:00:00,1,séchage
-02000015,voie1,Borne Charge,20/08/2021 10:00:00,1,mobilité
-02000015,voie2,Borne Charge,20/08/2021 10:00:00,1,mobilité
-02000015,voie3,Borne Charge,20/08/2021 10:00:00,1,mobilité
-04000026,voie1,Gén séchoir,20/08/2021 10:00:00,1,séchage
-04000026,voie2,Gén séchoir,20/08/2021 10:00:00,1,séchage
-04000026,voie3,Gén séchoir,20/08/2021 10:00:00,1,séchage
-04000026,voie4,Process séchoir,20/08/2021 10:00:00,1,séchage
+sn,channel,device name,start date,coef,usage
+02000015,ph1,Séchoir,20/06/2021 10:00,1,séchage
+02000015,ph2,Séchoir,20/06/2021 10:00,1,séchage
+02000015,ph3,Séchoir,20/06/2021 10:00,1,séchage
+02000015,1,Borne Charge,20/06/2021 10:00,1,mobilité
+02000015,2,Borne Charge,20/06/2021 10:00,1,mobilité
+02000015,3,Borne Charge,20/06/2021 10:00,1,mobilité
+04000026,1,Gén séchoir,20/06/2021 10:00,1,séchage
+04000026,2,Gén séchoir,20/06/2021 10:00,1,séchage
+04000026,3,Gén séchoir,20/06/2021 10:00,1,séchage
+04000026,4,Process séchoir,20/06/2021 10:00,1,séchage

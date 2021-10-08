@@ -96,7 +96,9 @@ const rowToMeasures = (metadata, deviceTable) => (row) => {
   if (!measured_at) {
     throw Error("Incorrect timestamp format");
   }
-  let channel, unit;
+  let channel,
+    unit,
+    chan = "";
 
   let offset = 1;
 
@@ -106,21 +108,23 @@ const rowToMeasures = (metadata, deviceTable) => (row) => {
       // nope
     } else if (offset > 0 && offset < 4) {
       channel = `Ph${offset}`;
+      chan = channel.toLowerCase();
       unit = "V"; // "V"
     } else {
       const columnForDevice = (offset - voltageOffset + 1) % 12;
       voieNumber = ~~((columnForDevice - 1) / 2) + 1;
       channel = `Voie${voieNumber}`;
+      chan = `${voieNumber || ""}`.toLowerCase();
       unit = columnForDevice % 2 === 0 ? "Var" : "W"; // "Q" : "P"
     }
     const device_offset = ~~((offset - voltageOffset) / 12);
     const sn = metadata[device_offset];
     const {
       device_name,
-      coeff,
+      coef,
       usage: _usage,
-    } = deviceTable(sn, `${channel || ""}`, measured_at);
-    const value = `${row[offset] * coeff}`;
+    } = deviceTable(sn, chan, measured_at);
+    const value = `${row[offset] * coef}`;
     const measure = {
       measured_at,
       sn,
@@ -154,7 +158,7 @@ const otherRowsToMeasures = (fileContent, delimiter, deviceTable, metadata) => {
   return measures;
 };
 
-/** @typedef {{ device_name: string, coeff: number, usage: string }} DeviceInfo **/
+/** @typedef {{ device_name: string, coef: number, usage: string }} DeviceInfo **/
 /** @typedef {(serialNumber: string, channel: string, timestamp: string) => DeviceInfo } DeviceTable **/
 
 /** @type {(filepath: string, deviceTable: DeviceTable, delimiter?: string) => Promise<Record<any, any>[]>} */
