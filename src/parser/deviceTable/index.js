@@ -2,7 +2,7 @@ const { DateTime } = require("luxon");
 const fs = require("fs");
 const parse = require("csv-parse/lib/sync");
 
-const { guessDelimiter } = require("../../lib");
+const { logger, guessDelimiter } = require("../../lib");
 
 /** @type {(filepath: string, delimiter?: string) => Promise<Record<any, any>>} */
 const parseDeviceTable = async (filepath, delimiter = "\t") => {
@@ -47,7 +47,7 @@ const parseDeviceTable = async (filepath, delimiter = "\t") => {
       }
     }
   } catch (error) {
-    console.log({ error });
+    logger.error({ error });
   }
   return deviceTable;
 };

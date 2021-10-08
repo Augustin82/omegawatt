@@ -1,3 +1,4 @@
+const { logger } = require("../lib");
 const { spawnSync } = require("child_process");
 
 const execute = (org, bucket, influxCommand) => {
@@ -14,9 +15,9 @@ const execute = (org, bucket, influxCommand) => {
     "--bucket",
     bucket,
   ]);
-  console.error("error", command.error);
-  console.log("stdout ", command.stdout.toString());
-  console.error("stderr ", command.stderr.toString());
+  logger.error("error", command.error);
+  logger.info("stdout ", command.stdout.toString());
+  logger.error("stderr ", command.stderr.toString());
 };
 
 module.exports = { execute };

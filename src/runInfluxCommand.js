@@ -1,3 +1,4 @@
+const { logger } = require("./lib");
 const dotenv = require("dotenv");
 const { runCommandInFile } = require("./parser/commands");
 const exit = require("process").exit.bind(this);
@@ -7,7 +8,7 @@ dotenv.config();
 const args = process.argv.slice(2);
 
 const showUsage = function () {
-  console.log(
+  logger.info(
     "Usage: node runInfluxCommand.js BUCKET PATH/TO/FILE/CONTAINING/INFLUX/COMMAND"
   );
 };

@@ -10,7 +10,6 @@ async function saveMeasures(customer, projectName, measures) {
   let points = [];
   for (let measure of measures) {
     const value = measure.value;
-    console.log("value", { value });
     if (isInt(value)) {
       const point = new Point(measure.measured_value)
         .timestamp(new Date(measure.measured_at))
