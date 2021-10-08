@@ -10,15 +10,16 @@ async function saveMeasures(customer, projectName, measures) {
   let points = [];
   for (let measure of measures) {
     const value = measure.value;
+    console.log("value", { value });
     if (isInt(value)) {
       const point = new Point(measure.measured_value)
         .timestamp(new Date(measure.measured_at))
         .tag("device_name", measure.device_name)
         .tag("channel", measure.channel)
         .tag("sn", measure.sn)
-        .tag("usage", measure["usage"])
+        .tag("usage", measure.usage)
         .tag("project", projectName)
-        .stringField("unit", measure.unit)
+        .tag("unit", measure.unit)
         .floatField("value", value);
       points.push(point);
     }
