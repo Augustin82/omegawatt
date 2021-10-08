@@ -119,19 +119,16 @@ const rowToMeasures = (metadata, deviceTable) => (row) => {
     }
     const device_offset = ~~((offset - voltageOffset) / 12);
     const sn = metadata[device_offset];
-    const {
-      device_name,
-      coef,
-      usage: _usage,
-    } = deviceTable(sn, chan, measured_at);
+    const { device_name, coef, usage } = deviceTable(sn, chan, measured_at);
     const value = `${row[offset] * coef}`;
     const measure = {
       measured_at,
       sn,
       channel,
       device_name,
-      unit,
+      usage,
       measured_value: unit,
+      unit,
       value,
     };
     measures.push(measure);
