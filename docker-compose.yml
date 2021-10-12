@@ -26,13 +26,14 @@ services:
     container_name: grafana
     restart: always
     ports:
-      - 80:3000  # port pour accéder à l'interface web de Grafana
+      - 8088:3000  # port pour accéder à l'interface web de Grafana
     links:
       - influxdb:influxdb
     environment:
       INFLUXDB_ADMIN_TOKEN: $INFLUXDB_ADMIN_TOKEN
       INFLUXDB_ORG: $INFLUXDB_ORG
       INFLUXDB_BUCKET: $INFLUXDB_BUCKET
+      INFLUXDB_DATA_INDEX_VERSION: "tsi1"
       GF_INSTALL_PLUGINS: "grafana-clock-panel,\
                           grafana-influxdb-08-datasource,\
                           grafana-kairosdb-datasource,\

@@ -88,7 +88,7 @@ function createFileIfNotExists(dirname) {
   if (fs.existsSync(dirname)) {
     logger.info(`Directory ${dirname} exists!`);
   } else {
-    fs.mkdirSync(dirname);
+    fs.mkdirSync(dirname,0777);    //  Change permissions 12/10/2021
     logger.info(`Directory ${dirname} created!`);
   }
 }
