@@ -51,7 +51,13 @@ const start = async (customer) => {
             logger.error("Error when saving measures", err);
           }
         } catch (err) {
-          error = true;
+          error = true;			// ###################### ajout codes erreurs
+			if (err.message) {
+				logger.error("ErrMessage: " + err.message)
+				}
+			if (err.stack) {
+				logger.error("ErrStack: " + err.stack)
+				}
           logger.error("Error when building measures", err);
         }
 
@@ -60,10 +66,10 @@ const start = async (customer) => {
             createFileIfNotExists(errorDirName);
             errorDirExists = true;
           }
-          fs.renameSync(
+          fs.renameSync(			
             csvFile,
             path.join(errorDirName, path.basename(csvFile))
-          );
+          );   
         } else {
           if (!doneDirExists) {
             createFileIfNotExists(doneDirName);

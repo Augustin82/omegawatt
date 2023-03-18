@@ -19,6 +19,25 @@ const parseOmegawattTime = (timestamp) => {
     .toISO();
 };
 
+const parseLoraTime = (timestamp) => {
+  // timestamp format for omegawatt:
+  // DD/MM/YY HH:mm:ss
+  // luxon equivalent:
+  // dd/MM/yy HH:mm:ss.u  // avec microseconds
+
+  if (!timestamp) {
+    return null;
+  }
+
+  return DateTime.fromFormat(timestamp, "dd/MM/yy HH:mm:ss.u", {
+    zone: "Europe/Paris",
+    setZone: true,
+    keepLocalTime: true,
+  })
+    .toUTC()
+    .toISO();
+};
+
 const parseSocomecTime = (timestamp) =>
   DateTime.fromISO(timestamp, {
     setZone: true,
@@ -29,4 +48,5 @@ const parseSocomecTime = (timestamp) =>
 module.exports = {
   parseSocomecTime,
   parseOmegawattTime,
+  parseLoraTime,
 };
