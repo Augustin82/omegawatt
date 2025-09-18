@@ -19,14 +19,7 @@ const parseOmegawattTime = (timestamp) => {
     .toISO();
 };
 
-const parseSocomecTime = (timestamp) =>
-  DateTime.fromISO(timestamp, {
-    setZone: true,
-    zone: "Europe/Paris",
-    keepLocalTime: true,
-  }).toISO();
 
 module.exports = {
-  parseSocomecTime,
   parseOmegawattTime,
 };

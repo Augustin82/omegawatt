@@ -1,5 +1,4 @@
 const { logger } = require("./lib");
-const { parseSocomec } = require("./parser/socomec");
 const { parseOmegawatt } = require("./parser/omegawatt");
 
 /**
@@ -14,13 +13,7 @@ const { parseOmegawatt } = require("./parser/omegawatt");
  * @type {(filepath: string, deviceTable: DeviceTable) => Promise<Measure[]> }
  */
 const buildMeasures = async (filepath, deviceTable) => {
-  let parser;
-
-  if (filepath.toLowerCase().includes("socomec")) {
-    parser = parseSocomec;
-  } else {
-    parser = parseOmegawatt;
-  }
+  const parser = parseOmegawatt
 
   const measures = await parser(filepath, deviceTable);
   logger.info(`${measures.length} measures in ${filepath}`);
