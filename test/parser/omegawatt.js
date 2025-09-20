@@ -3,7 +3,6 @@ const chai = require("chai");
 let expect = chai.expect;
 const { DateTime } = require("luxon");
 let { parseOmegawatt } = require("../../src/parser/omegawatt");
-let { getDeviceInfo } = require("../../src/parser/deviceTable");
 let fs = require("fs");
 const { parseOmegawattTime } = require("../../src/lib/dateHelpers");
 
@@ -18,12 +17,7 @@ let fixture1 = "./test/fixtures/parser/omegawatt/fixture1.tsv";
 let fixture1_json = "./test/fixtures/parser/omegawatt/fixture1.json";
 let fixture_full = "./test/fixtures/parser/omegawatt/fixture_full.tsv";
 let fixture_full_json = "./test/fixtures/parser/omegawatt/fixture_full.json";
-let deviceTable_json = "./test/fixtures/parser/omegawatt/deviceTable.json";
 
-let emptyDeviceTable = getDeviceInfo({});
-let fullDeviceTable = getDeviceInfo(
-  JSON.parse(fs.readFileSync(deviceTable_json).toString())
-);
 
 describe("Omegawatt utils", () => {
   describe("timestamp validator", () => {
@@ -59,7 +53,7 @@ describe("Omegawatt utils", () => {
 
 describe("Omegawatt parser", () => {
   it("errors for empty files", () => {
-    return parseOmegawatt(empty, emptyDeviceTable)
+    return parseOmegawatt(empty)
       .then(() => {
         expect.fail("An empty file should cause the parser to throw!");
       })
@@ -71,7 +65,7 @@ describe("Omegawatt parser", () => {
   });
 
   it("errors for files that contain non-tsv text", async () => {
-    return parseOmegawatt(junk, emptyDeviceTable)
+    return parseOmegawatt(junk)
       .then(() => {
         expect.fail("A bad file should cause the parser to throw!");
       })
@@ -83,7 +77,7 @@ describe("Omegawatt parser", () => {
   });
 
   it("errors when there is the wrong amount of columns", async () => {
-    return parseOmegawatt(fixture_bad_columns, emptyDeviceTable)
+    return parseOmegawatt(fixture_bad_columns)
       .then(() => {
         expect.fail(
           "A bad number of columns should cause the parser to throw!"
@@ -95,7 +89,7 @@ describe("Omegawatt parser", () => {
   });
 
   it("errors when there is the wrong format of timestamp", async () => {
-    return parseOmegawatt(fixture_bad_timestamp, emptyDeviceTable)
+    return parseOmegawatt(fixture_bad_timestamp)
       .then(() => {
         expect.fail("A bad timestamp should cause the parser to throw!");
       })
@@ -105,7 +99,7 @@ describe("Omegawatt parser", () => {
   });
 
   it("errors when there is a bad TX00 format", async () => {
-    return parseOmegawatt(fixture_bad_TX00, emptyDeviceTable)
+    return parseOmegawatt(fixture_bad_TX00)
       .then(() => {
         expect.fail("A bad TX00 format should cause the parser to throw!");
       })
@@ -115,7 +109,7 @@ describe("Omegawatt parser", () => {
   });
 
   it("handles correct tsv files", async () => {
-    const result = await parseOmegawatt(fixture1, emptyDeviceTable);
+    const result = await parseOmegawatt(fixture1);
     const expected = JSON.parse(fs.readFileSync(fixture1_json).toString());
 
     expect(result).to.eql(expected);
@@ -134,8 +128,7 @@ describe("Omegawatt parser", () => {
     ];
     for (const [prodFile, length] of prodFiles) {
       const result = await parseOmegawatt(
-        `${prefix}/${prodFile}`,
-        emptyDeviceTable
+        `${prefix}/${prodFile}`
       );
 
       expect(result).to.have.length(length);
@@ -143,7 +136,7 @@ describe("Omegawatt parser", () => {
   });
 
   it("handles a correct tsv file with a device table", async () => {
-    const result = await parseOmegawatt(fixture_full, fullDeviceTable);
+    const result = await parseOmegawatt(fixture_full);
     const expected = JSON.parse(fs.readFileSync(fixture_full_json).toString());
 
     expect(result).to.eql(expected);

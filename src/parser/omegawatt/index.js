@@ -2,19 +2,21 @@ const fs = require("fs");
 const parse = require("csv-parse/lib/sync");
 const { parseOmegawattTime } = require("../../lib/dateHelpers.js");
 
-const { guessDelimiter } = require("../../lib");
+const { guessDelimiter, logger } = require("../../lib");
 
 const voltageOffset = 4;
 const measuresOffset = 12;
 
 const isAmountOfColumnsValid = (row) => {
   const length = row.length;
+  logger.info(length)
   if (length < voltageOffset + measuresOffset) {
     return false;
   }
-  if ((length - voltageOffset - measuresOffset) % 12 !== 0) {
-    return false;
-  }
+  // if ((length - voltageOffset - measuresOffset) % 12 !== 0) {
+  //   console.log(length)
+  //   return false;
+  // }
   return true;
 };
 
@@ -89,8 +91,8 @@ const secondRowToFileType = (fileContent, delimiter) => {
   return fileType;
 };
 
-/** @param {DeviceTable} deviceTable **/
-const rowToMeasures = (metadata, deviceTable) => (row) => {
+
+const rowToMeasures = (metadata) => (row) => {
   const measures = [];
   const measured_at = parseOmegawattTime(row[0]);
   if (!measured_at) {
@@ -121,14 +123,12 @@ const rowToMeasures = (metadata, deviceTable) => (row) => {
     }
     const device_offset = ~~((offset - voltageOffset) / 12);
     const sn = metadata[device_offset];
-    const { device_name, coef, usage } = deviceTable(sn, chan, measured_at);
-    const value = `${row[offset] * coef}`;
+    
+    const value = `${row[offset] * 1}`;
     const measure = {
       measured_at,
       sn,
       channel,
-      device_name,
-      usage,
       measured_value,
       unit,
       value,
@@ -140,9 +140,9 @@ const rowToMeasures = (metadata, deviceTable) => (row) => {
   return measures;
 };
 
-/** @param {DeviceTable} deviceTable **/
-const otherRowsToMeasures = (fileContent, delimiter, deviceTable, metadata) => {
-  const toMeasures = rowToMeasures(metadata, deviceTable);
+
+const otherRowsToMeasures = (fileContent, delimiter, metadata) => {
+  const toMeasures = rowToMeasures(metadata);
   const csvOptions = {
     delimiter,
     columns: false,
@@ -157,12 +157,10 @@ const otherRowsToMeasures = (fileContent, delimiter, deviceTable, metadata) => {
   return measures;
 };
 
-/** @typedef {{ device_name: string, coef: number, usage: string }} DeviceInfo **/
-/** @typedef {(serialNumber: string, channel: string, timestamp: string) => DeviceInfo } DeviceTable **/
-
-/** @type {(filepath: string, deviceTable: DeviceTable, delimiter?: string) => Promise<Record<any, any>[]>} */
-const parseOmegawatt = async (filepath, deviceTable, delimiter = "\t") => {
-  delimiter = delimiter || guessDelimiter(filepath);
+/** @type {(filepath: string) => Promise<Record<any, any>[]>} */
+const parseOmegawatt = async (filepath) => {
+  
+  let delimiter = guessDelimiter(filepath);
 
   const fileContent = fs.readFileSync(filepath, {
     encoding: "utf8",
@@ -170,13 +168,13 @@ const parseOmegawatt = async (filepath, deviceTable, delimiter = "\t") => {
   });
 
   const _fileType = secondRowToFileType(fileContent, delimiter);
+  logger.info(`fileType: ${_fileType}`)
 
   const metadata = firstRowToMetadata(fileContent, delimiter);
 
   const measures = otherRowsToMeasures(
     fileContent,
     delimiter,
-    deviceTable,
     metadata
   );
 

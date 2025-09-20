@@ -1,12 +1,11 @@
 const guessDelimiter = (filepath) => {
-  const extension = filepath.split(".").slice(-1);
-  switch (extension) {
-    case "tsv":
-      return "\t";
-    case "csv":
-    default:
-      return ",";
+  const extension = filepath.split(".").slice(-1)[0];
+  if(extension == "tsv"){
+    return "\t";
+  } else if(extension == "csv"){
+    return ",";
   }
+  return ",";
 };
 
 module.exports = {

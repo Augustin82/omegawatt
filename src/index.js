@@ -1,7 +1,6 @@
 const dotenv = require("dotenv");
 const path = require("path");
 const { logger, getProjectDirs, getDeviceDirs } = require("./lib");
-const { getDeviceTable } = require("./parser/deviceTable");
 const { buildMeasures } = require("./buildMeasures");
 const { saveMeasures } = require("./saveMeasures");
 const getCsvFiles = require("./lib/getCsvFiles");
@@ -22,9 +21,6 @@ const start = async (customer) => {
 
   for (let projectDir of projectDirs) {
     const projectName = path.basename(projectDir);
-    const deviceTable = await getDeviceTable(
-      path.join(customerDir, projectName, "device_name.csv")
-    );
 
     const deviceDirs = getDeviceDirs(projectDir);
 
@@ -42,7 +38,7 @@ const start = async (customer) => {
         let error = false;
 
         try {
-          measures = await buildMeasures(csvFile, deviceTable);
+          measures = await buildMeasures(csvFile);
           try {
             await saveMeasures(customer, projectName, measures);
             logger.info(`Success processing ${csvFile}`);
@@ -51,6 +47,7 @@ const start = async (customer) => {
             logger.error("Error when saving measures", err);
           }
         } catch (err) {
+          console.log(err)
           error = true;
           logger.error("Error when building measures", err);
         }
@@ -60,10 +57,10 @@ const start = async (customer) => {
             createFileIfNotExists(errorDirName);
             errorDirExists = true;
           }
-          fs.renameSync(
-            csvFile,
-            path.join(errorDirName, path.basename(csvFile))
-          );
+          // fs.renameSync(
+          //   csvFile,
+          //   path.join(errorDirName, path.basename(csvFile))
+          // );
         } else {
           if (!doneDirExists) {
             createFileIfNotExists(doneDirName);

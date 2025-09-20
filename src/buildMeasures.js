@@ -1,21 +1,17 @@
 const { logger } = require("./lib");
 const { parseOmegawatt } = require("./parser/omegawatt");
 
-/**
- * @typedef {any} DeviceTable
- */
 
 /**
  * @typedef {any} Measure
  */
 
 /**
- * @type {(filepath: string, deviceTable: DeviceTable) => Promise<Measure[]> }
+ * @type {(filepath: string) => Promise<Measure[]> }
  */
-const buildMeasures = async (filepath, deviceTable) => {
-  const parser = parseOmegawatt
+const buildMeasures = async (filepath) => {
 
-  const measures = await parser(filepath, deviceTable);
+  const measures = await parseOmegawatt(filepath);
   logger.info(`${measures.length} measures in ${filepath}`);
   return measures;
 };
